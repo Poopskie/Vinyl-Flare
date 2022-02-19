@@ -1,0 +1,21 @@
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\bin\Debug\net6.0-windows\Vinyl Flare.exe
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\bin\Debug\net6.0-windows\Vinyl Flare.deps.json
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\bin\Debug\net6.0-windows\Vinyl Flare.runtimeconfig.json
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\bin\Debug\net6.0-windows\Vinyl Flare.dll
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\bin\Debug\net6.0-windows\Vinyl Flare.pdb
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.csproj.AssemblyReference.cache
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare_MarkupCompile.cache
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare_MarkupCompile.lref
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.g.resources
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.AssemblyInfoInputs.cache
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.AssemblyInfo.cs
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.csproj.CoreCompileInputs.cache
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.dll
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\refint\Vinyl Flare.dll
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.pdb
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.genruntimeconfig.cache
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\ref\Vinyl Flare.dll
