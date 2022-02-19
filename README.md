@@ -6,4 +6,4 @@ First WPF application I have made, passion project for myself
 
 Inspired by the fact that I can't afford a Vinyl Player and love good albums
 
-* oh yea, I also can't afford spotify premium thats why
+<i>oh yea, I also can't afford spotify premium thats why</i>
