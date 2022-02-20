@@ -14,4 +14,5 @@ namespace Vinyl_Flare
     public partial class App : Application
     {
     }
+
 }
