@@ -10,6 +10,8 @@ Inspired by the fact that I can't afford a Vinyl Player and love good albums
 
 <i>oh yea, I also can't afford spotify premium thats why</i>
 
+<br>
+
 # Use
 <h4> GUI </h4>
 
@@ -21,7 +23,7 @@ Inspired by the fact that I can't afford a Vinyl Player and love good albums
 
 Select Album you want to play in Library
 - Press <i>Play</i>
-- Skips/Pause Songs in main window
+- Skip/Pause Songs in main window
 <br>
 
 <h4> Making Albums </h4>
