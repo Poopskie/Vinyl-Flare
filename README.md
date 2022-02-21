@@ -4,7 +4,7 @@ WPF app that simulates a vinyl player, and allows users to make albums
 
 First WPF application I have made, passion project for myself
 
-
+<br>
 
 Inspired by the fact that I can't afford a Vinyl Player and love good albums
 
@@ -14,7 +14,7 @@ Inspired by the fact that I can't afford a Vinyl Player and love good albums
 <h4> GUI </h4>
 
 - Top right button to fullscreen
-- Hide Options with Top left button
+- Hide options with Top left button
 <br>
 
 <h4> Listening to Music </h4>
