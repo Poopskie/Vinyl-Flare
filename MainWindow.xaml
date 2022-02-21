@@ -5,8 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vinyl_Flare"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="920"
+        ResizeMode="CanResize"
+        Background="Transparent"
+        WindowStyle="SingleBorderWindow">
+    <!--AllowsTransparency="True"-->
 
-    </Grid>
+    <Border Background="LightGray" CornerRadius="20">
+
+
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="450"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <!-- Button to hide/unhide buttons -->
+            <Button HorizontalAlignment="Center" 
+                    Margin="10,10,10,0" VerticalAlignment="Top"
+                        Width="75" Height="75">
+                <Image Source="/rikakawai.jpg" HorizontalAlignment="Center"/>
+            </Button>
+
+            <StackPanel Margin="0,100,0,0">
+
+                <RadioButton Content="Library" Height="50"
+                             FontSize="14" FontFamily="Comic Sans MS"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+
+                <RadioButton Content="Garage" Height="50"
+                             FontSize="14" FontFamily="Comic Sans MS"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
+
+
+            </StackPanel>
+            
+            
+        </Grid>
+
+
+    </Border>
+
 </Window>
