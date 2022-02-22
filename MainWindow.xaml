@@ -4,12 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vinyl_Flare"
+        xmlns:viewModel="clr-namespace:Vinyl_Flare.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="920"
         ResizeMode="CanResize"
         Background="Transparent"
         WindowStyle="SingleBorderWindow">
     <!--AllowsTransparency="True"-->
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
 
     <Border Background="LightGray" CornerRadius="20">
 
@@ -27,28 +33,39 @@
 
 
             <!-- Button to hide/unhide buttons -->
-            <Button HorizontalAlignment="Center" 
-                    Margin="10,10,10,0" VerticalAlignment="Top"
-                        Width="75" Height="75">
-                <Image Source="/rikakawai.jpg" HorizontalAlignment="Center"/>
-            </Button>
 
-            <StackPanel Margin="0,100,0,0">
+            <StackPanel Margin="0,0,0,0">
+
+                <Button HorizontalAlignment="Center" 
+                        Margin="10,10,10,10" VerticalAlignment="Top"
+                            Width="75" Height="75">
+                    <Image Source="/rikakawai.jpg" HorizontalAlignment="Center"/>
+                </Button>
+
+                <RadioButton Content="Home" Height="50"
+                             FontSize="14" FontFamily="Comic Sans MS"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True" Command="{Binding HomeViewCommand}"/>
 
                 <RadioButton Content="Library" Height="50"
                              FontSize="14" FontFamily="Comic Sans MS"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding LibraryViewCommand}"/>
 
 
-                <RadioButton Content="Garage" Height="50"
+                <RadioButton Content="Factory" Height="50"
                              FontSize="14" FontFamily="Comic Sans MS"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding FactoryViewCommand}"/>
 
 
 
             </StackPanel>
+
+            <ContentControl Grid.Column="1" Margin="10,10,-810,10"
+                            Content = "{Binding CurrentView}"/>
             
-            
+
         </Grid>
 
 

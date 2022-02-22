@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\App.xaml
-2-1278799727
+5-792586411
 
-9-936966525
+16-2066685970
 212-803380730
-MainWindow.xaml;Themes\MenuButtonTheme.xaml;
+MainWindow.xaml;MVVM\View\FactoryView.xaml;MVVM\View\HomeView.xaml;MVVM\View\LibraryView.xaml;Themes\MenuButtonTheme.xaml;
 
 False
 

@@ -57,3 +57,10 @@ C:\Users\Jackie's PC\source\repos\Vinyl Flare\bin\Debug\net6.0-windows\runtimes\
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Vinyl Flare.csproj.CopyComplete
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Themes\MenuButtonTheme.baml
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\App.baml
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\FactoryView.g.cs
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\HomeView.g.cs
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\FactoryView.baml
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\HomeView.baml
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\LibraryView.g.cs
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\LibraryView.baml
