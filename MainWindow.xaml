@@ -32,6 +32,9 @@
             </Grid.RowDefinitions>
 
 
+            <ContentControl Margin="10,10,-810,10"
+                                Content = "{Binding CurrentView}" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
             <!-- Button to hide/unhide buttons -->
 
             <StackPanel Margin="0,0,0,0">
@@ -62,11 +65,10 @@
 
             </StackPanel>
 
-            <ContentControl Grid.Column="1" Margin="10,10,-810,10"
-                            Content = "{Binding CurrentView}"/>
-            
 
         </Grid>
+
+
 
 
     </Border>

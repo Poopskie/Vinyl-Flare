@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:Vinyl_Flare"
              xmlns:viewModel="clr-namespace:Vinyl_Flare.MVVM.ViewModel"
              xmlns:view="clr-namespace:Vinyl_Flare.MVVM.View"
+             xmlns:spinning="clr-namespace:Vinyl_Flare.Spinning"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -22,7 +23,12 @@
             <DataTemplate DataType="{x:Type viewModel:FactoryViewModel}">
                 <view:FactoryView/>
             </DataTemplate>
-
+<!--
+            <ControlTemplate TargetType="{x:Type spinning:SpinningVinyl}">
+                
+            </ControlTemplate>
+            
+-->
 
         </ResourceDictionary>
     </Application.Resources>

@@ -13,6 +13,23 @@ namespace Vinyl_Flare
     /// </summary>
     public partial class App : Application
     {
+
+
+        
+
+        //thing i added for routedevent, remove later no kizzy
+        private RoutedEvent isSpinning;
+
+        public RoutedEvent GetIsSpinning()
+        {
+            return isSpinning;
+        }
+
+        public void SetIsSpinning(RoutedEvent value)
+        {
+            isSpinning = value;
+        }
+
     }
 
 }
