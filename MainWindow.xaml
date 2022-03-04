@@ -23,7 +23,7 @@
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -31,18 +31,19 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <ContentControl Margin="10,10,10,10" Grid.RowSpan="2" Grid.ColumnSpan ="2"
+                            Content = "{Binding CurrentView}"/>
 
-            <ContentControl Margin="10,10,-810,10"
-                                Content = "{Binding CurrentView}" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
             <!-- Button to hide/unhide buttons -->
 
             <StackPanel Margin="0,0,0,0">
 
+                <!-- The button that hides the other menu options -->
                 <Button HorizontalAlignment="Center" 
                         Margin="10,10,10,10" VerticalAlignment="Top"
                             Width="75" Height="75">
-                    <Image Source="/rikakawai.jpg" HorizontalAlignment="Center"/>
+                    <Image Source="Images/rikakawai.jpg" HorizontalAlignment="Center"/>
                 </Button>
 
                 <RadioButton Content="Home" Height="50"

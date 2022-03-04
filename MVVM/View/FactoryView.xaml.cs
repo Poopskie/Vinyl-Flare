@@ -24,5 +24,10 @@ namespace Vinyl_Flare.MVVM.View
         {
             InitializeComponent();
         }
+
+        private void Button_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+
+        }
     }
 }
