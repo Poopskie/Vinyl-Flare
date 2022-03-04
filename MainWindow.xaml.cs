@@ -24,5 +24,19 @@ namespace Vinyl_Flare
         {
             InitializeComponent();
         }
+
+        private void btnFullScreen_Checked(object sender, RoutedEventArgs e)
+        {
+            window.WindowStyle = WindowStyle.None;
+            window.WindowState = WindowState.Maximized;
+
+        }
+
+        private void btnFullScreen_Unchecked(object sender, RoutedEventArgs e)
+        {
+            window.WindowStyle = WindowStyle.ThreeDBorderWindow;
+            window.WindowState = WindowState.Normal;
+            
+        }
     }
 }
