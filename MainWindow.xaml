@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1380"
         x:Name="window"
-        ResizeMode="CanResize" WindowState="Maximized"
+        ResizeMode="NoResize" WindowState="Maximized"
         Background="Transparent"
-        WindowStyle="ThreeDBorderWindow">
+        WindowStyle="ThreeDBorderWindow" Icon="/Images/milimnava.jpg">
     <!--AllowsTransparency="True"-->
 
     <Window.DataContext>
@@ -29,7 +29,7 @@
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="4*"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
             <ContentControl Margin="10,10,10,10" Grid.RowSpan="2" Grid.ColumnSpan ="2"

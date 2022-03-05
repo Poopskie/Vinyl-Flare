@@ -5,14 +5,48 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vinyl_Flare.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="1080" d:DesignWidth="1920"
              Background="#FFE6EE">
     <Grid>
 
-        <Button Width="100" Height="100" 
-                Style="{StaticResource FactoryButtonTheme}"
-                Content="Poo" FontFamily="Comic Sans MS"
-                FontSize="16"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+
+
+            <TextBlock Text="Album Name:" FontSize="30"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontFamily="Comic Sans MS"/>
+
+            <TextBox VerticalAlignment="Center" FontFamily="Comic Sans MS"
+                     Margin="50" Width="400" Height="50" FontSize="30"
+                      Style="{StaticResource TextBoxTheme}"/>
+
+
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+            
+            <Button Width="100" Height="100" 
+                    Style="{StaticResource FactoryButtonTheme}"
+                    Content="Poo" FontFamily="Comic Sans MS"
+                    FontSize="16"/>
+            
+        </StackPanel>
 
 
 
