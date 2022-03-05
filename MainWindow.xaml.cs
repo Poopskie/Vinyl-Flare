@@ -35,7 +35,7 @@ namespace Vinyl_Flare
         private void btnFullScreen_Unchecked(object sender, RoutedEventArgs e)
         {
             window.WindowStyle = WindowStyle.ThreeDBorderWindow;
-            window.WindowState = WindowState.Normal;
+            window.WindowState = WindowState.Maximized;
             
         }
     }
