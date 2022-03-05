@@ -7,7 +7,7 @@
              xmlns:songPlayed="clr-namespace:Vinyl_Flare"
              mc:Ignorable="d" 
              d:DesignHeight="900" d:DesignWidth="1600"
-             Background="MediumPurple">
+             Background="White">
     <Grid>
 
 

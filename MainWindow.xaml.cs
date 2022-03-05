@@ -24,7 +24,7 @@ namespace Vinyl_Flare
         {
             InitializeComponent();
         }
-
+        // Toggle Button Commands for fullscreen
         private void btnFullScreen_Checked(object sender, RoutedEventArgs e)
         {
             window.WindowStyle = WindowStyle.None;
@@ -37,6 +37,19 @@ namespace Vinyl_Flare
             window.WindowStyle = WindowStyle.ThreeDBorderWindow;
             window.WindowState = WindowState.Maximized;
             
+        }
+        // Toggle Button commands for hiding menus
+        private void HideMenus_Checked(object sender, RoutedEventArgs e)
+        {
+            SideMenu.Visibility = Visibility.Hidden;
+            btnFullScreen.Visibility = Visibility.Hidden;
+
+        }
+
+        private void HideMenus_Unchecked(object sender, RoutedEventArgs e)
+        {
+            SideMenu.Visibility = Visibility.Visible;
+            btnFullScreen.Visibility = Visibility.Visible;
         }
     }
 }
