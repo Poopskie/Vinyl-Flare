@@ -28,7 +28,7 @@ namespace Vinyl_Flare.MVVM.View
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            AlbumName.Text = "POO";
+            AlbumName.Text = "heeee";
             
         }
     }
