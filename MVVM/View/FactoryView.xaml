@@ -4,9 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vinyl_Flare.MVVM.View"
+             xmlns:viewModel="clr-namespace:Vinyl_Flare.MVVM.ViewModel" 
+             d:DataContext="{d:DesignInstance Type=viewModel:FactoryViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920"
              Background="#FFE6EE">
+
+
+
+    
+    
     <Grid>
 
         <Grid.RowDefinitions>
@@ -33,9 +40,12 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center"
                        FontFamily="Comic Sans MS"/>
 
+            <!-- Textbox with cool style -->
+            
             <TextBox VerticalAlignment="Center" FontFamily="Comic Sans MS"
                      Margin="50" Width="400" Height="50" FontSize="30"
-                      Style="{StaticResource TextBoxTheme}"/>
+                      Style="{StaticResource TextBoxTheme}"
+                     x:Name="AlbumName"/>
 
 
 
@@ -86,11 +96,15 @@
 
         </StackPanel>
 
+        
+         <!-- Submit button, should trigger other things -->
         <Button Width="300" Height="100" Grid.Column="1" Grid.Row="5"
                 Style="{StaticResource FactoryButtonTheme}"
                 Content="Create Album" FontFamily="Comic Sans MS"
                 FontSize="24" HorizontalAlignment="Left" Margin="286 0 0 50" 
-                VerticalAlignment="Center"/>
+                VerticalAlignment="Center" Click="btnSubmit_Click"
+                x:Name="btnSubmit"/>
+        <!-- I think I need to do more work in C# to switch this view from inside -->
 
 
 

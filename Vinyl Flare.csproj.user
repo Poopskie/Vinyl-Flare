@@ -16,6 +16,9 @@
     <Compile Update="MVVM\View\LibraryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\View\SuccessView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\LibraryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\SuccessView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\FactoryButtonTheme.xaml">
