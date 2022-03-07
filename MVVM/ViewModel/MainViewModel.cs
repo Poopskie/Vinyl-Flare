@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using Vinyl_Flare.Core;
 
 namespace Vinyl_Flare.MVVM.ViewModel

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Vinyl_Flare.MVVM.ViewModel;
 
 namespace Vinyl_Flare.MVVM.View
 {
@@ -29,6 +30,7 @@ namespace Vinyl_Flare.MVVM.View
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             AlbumName.Text = "heeee";
+            //MainViewModel.CurrentView = new SuccessViewModel;
             
         }
     }
