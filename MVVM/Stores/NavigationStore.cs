@@ -10,8 +10,23 @@ namespace Vinyl_Flare.MVVM.Store
 {
     public class NavigationStore
     {
-        public ViewModelBase CurrentViewModel { get; set;}
+        // action is void event with no parameters
+        public event Action CurrentViewModelChanged;
+        private ViewModelBase _currentViewModel;
+        public ViewModelBase CurrentViewModel
+        {
+            get => _currentViewModel;
+            set 
+            { 
+                _currentViewModel = value;
+                OnCurrentViewModelChanged();
+            }
+        }
 
-
+        private void OnCurrentViewModelChanged()
+        {
+            // method that notifies all subscribed to currentviewmodelchanged
+            CurrentViewModelChanged?.Invoke();
+        }
     }
 }

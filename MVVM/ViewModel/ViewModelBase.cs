@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NavigationMVVM.ViewModels
 {
-    public class ViewModelBase : INotifyPropertyChanged, IDisposable
+    public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -14,6 +14,6 @@ namespace NavigationMVVM.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public virtual void Dispose() { }
+        
     }
 }

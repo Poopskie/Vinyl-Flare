@@ -16,7 +16,20 @@ namespace Vinyl_Flare
     public partial class App : Application
     {
 
-         NavigationStore navigationStore = new NavigationStore();
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            NavigationStore navigationStore = new NavigationStore();
+            navigationStore.CurrentViewModel = new FactoryViewModel(navigationStore);
+
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainViewModel(navigationStore)
+            };
+            
+            base.OnStartup(e);
+        }
+
+
 
 
 

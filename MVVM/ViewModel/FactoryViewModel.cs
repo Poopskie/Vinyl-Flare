@@ -1,39 +1,20 @@
-﻿using System;
+﻿using NavigationMVVM.ViewModels;
+using System;
+using System.Windows.Input;
 using Vinyl_Flare.Core;
+using Vinyl_Flare.MVVM.Commands;
+using Vinyl_Flare.MVVM.Store;
 
 namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end didn't work
 {
-    internal class FactoryViewModel: Observable_Object
+    internal class FactoryViewModel: ViewModelBase
     {
-        /*
-        public RelayCommand SuccessViewCommand { get; set; }
-        public SuccessViewModel SuccessVm { get; set; }
-        public FactoryViewModel FactoryVm { get; set; }
+        public ICommand ShowSuccessCommand { get; }
 
-        private object _currentView;
-
-        public object CurrentView // current view object
+        public FactoryViewModel(NavigationStore navigationStore)
         {
-            get { return _currentView; }
-            set
-            {
-                _currentView = value;
-                OnPropertyChanged();
-            }
+            ShowSuccessCommand = new ShowSuccessCommand(navigationStore);
         }
-
-        public FactoryViewModel()
-        {
-            SuccessVm = new SuccessViewModel();
-            FactoryVm = new FactoryViewModel();
-            CurrentView = FactoryVm;
-
-            SuccessViewCommand = new RelayCommand(o =>
-            {
-              //  currentView = SuccessVm;
-            });
-        }
-        */
 
     }
 }
