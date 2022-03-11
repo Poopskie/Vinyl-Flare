@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Vinyl_Flare.MVVM.ViewModel
 {
-    internal class HomeViewModel
+    internal class HomeViewModel : ViewModelBase
     {
     }
 }

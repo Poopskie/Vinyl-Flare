@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Vinyl_Flare.MVVM.Store;
 using Vinyl_Flare.MVVM.ViewModel;
 
 namespace Vinyl_Flare
@@ -15,7 +16,25 @@ namespace Vinyl_Flare
     public partial class App : Application
     {
 
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            NavigationStore navigationStore = new NavigationStore();
+            navigationStore.CurrentViewModel = new FactoryViewModel(navigationStore);
+
+            MainWindow = new MainWindow()
+            {
+                DataContext = new MainViewModel(navigationStore)
+            };
+            
+            base.OnStartup(e);
+        }
+
+
+
+
+
         
+
         //thing i added for routedevent, remove later no kizzy
         private RoutedEvent isSpinning;
 

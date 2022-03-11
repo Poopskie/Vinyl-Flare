@@ -1,62 +1,32 @@
-﻿using System;
-using System.ComponentModel;
+﻿using NavigationMVVM.ViewModels;
+using System;
 using Vinyl_Flare.Core;
+using Vinyl_Flare.MVVM.Store;
 
 namespace Vinyl_Flare.MVVM.ViewModel
 {
 
-    internal class MainViewModel : Observable_Object // always showing, calls upon other views
+    internal class MainViewModel : ViewModelBase // always showing, calls upon other views
     {
-        //old stuff that doesn't use the store
+        //all the new stuff for MVVM
+        private readonly NavigationStore _navigationStore;
 
-        public RelayCommand HomeViewCommand { get; set; }
-        public RelayCommand LibraryViewCommand { get; set; }
-        public RelayCommand FactoryViewCommand { get; set; }
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
-        public HomeViewModel HomeVm { get; set; }
-        public LibraryViewModel LibraryVm { get; set; }
-        public FactoryViewModel FactoryVm { get; set; }
-
-        private object _currentView;
-
-
-        public object CurrentView // current view object
+        public MainViewModel(NavigationStore navigationStore)
         {
-            get { return _currentView; }
-            set
-            {
-                _currentView = value;
-                OnPropertyChanged();
-            }
+            _navigationStore = navigationStore;
+
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+
         }
 
-
-        public MainViewModel()
+        private void OnCurrentViewModelChanged()
         {
-            // constructing default variables, declaration
-            HomeVm = new HomeViewModel();
-            LibraryVm = new LibraryViewModel();
-            FactoryVm = new FactoryViewModel();
-
-            CurrentView = HomeVm;
-
-            // Commands to switch tabs
-            HomeViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = HomeVm;
-            });
-
-            LibraryViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = LibraryVm;
-            });
-
-            FactoryViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = FactoryVm;
-            });
-
-
+            // view regrabs the value of currentviewmodel
+            OnPropertyChanged(nameof(CurrentViewModel));
+            // going to go to viewmodelbase triggering "Inotifiedpropertychanged" 
         }
     }
+
 }
