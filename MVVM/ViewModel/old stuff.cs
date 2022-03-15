@@ -23,4 +23,4 @@ namespace Vinyl_Flare.MVVM.ViewModel
     }
 }
 
-*
+*/

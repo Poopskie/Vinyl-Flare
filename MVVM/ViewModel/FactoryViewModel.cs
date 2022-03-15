@@ -13,7 +13,7 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
 
         public FactoryViewModel(NavigationStore navigationStore)
         {
-            ShowSuccessCommand = new ShowSuccessCommand(navigationStore);
+            ShowSuccessCommand = new NavigateCommand<SuccessViewModel>(navigationStore, () => new SuccessViewModel(navigationStore));
         }
 
     }
