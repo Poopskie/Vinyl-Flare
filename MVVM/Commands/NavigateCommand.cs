@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vinyl_Flare.MVVM.Service;
 using Vinyl_Flare.MVVM.Store;
 using Vinyl_Flare.MVVM.ViewModel;
 
@@ -13,18 +14,17 @@ namespace Vinyl_Flare.MVVM.Commands
         // contrainging and making sure TViewModel is view model base
         where TViewModel : ViewModelBase
     {
-        private readonly NavigationStore _navigationStore;
-        private readonly Func<TViewModel> _createViewModel;
+        private readonly NavigationService<TViewModel> _navigationService;
 
-        public NavigateCommand(NavigationStore navigationStore, Func<TViewModel> createViewModel)
-        { // updated TViewModel to change navigate
-            _navigationStore = navigationStore;
-            _createViewModel = createViewModel;
+        // re-did navigation command to run the function in the service
+        public NavigateCommand(NavigationService<TViewModel> navigationService)
+        {
+            _navigationService = navigationService;
         }
 
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = _createViewModel();
+            _navigationService.Navigate();
         }
     }
 }
