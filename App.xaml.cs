@@ -11,7 +11,7 @@ using Vinyl_Flare.MVVM.ViewModel;
 namespace Vinyl_Flare
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    ///
     /// </summary>
     public partial class App : Application
     {
@@ -19,11 +19,12 @@ namespace Vinyl_Flare
         protected override void OnStartup(StartupEventArgs e)
         {
             NavigationStore navigationStore = new NavigationStore();
-            navigationStore.CurrentViewModel = new FactoryViewModel(navigationStore);
+            SideBarViewModel sideBarViewModel = new SideBarViewModel(navigationStore);
+            navigationStore.CurrentViewModel = new MainViewModel(navigationStore, sideBarViewModel);
 
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel(navigationStore)
+                DataContext = navigationStore
             };
             
             base.OnStartup(e);

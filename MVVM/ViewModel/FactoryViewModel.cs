@@ -1,5 +1,6 @@
 ﻿using NavigationMVVM.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using Vinyl_Flare.Core;
 using Vinyl_Flare.MVVM.Commands;
@@ -12,6 +13,13 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
     {
         public ICommand ShowSuccessCommand { get; }
         public ICommand CreateAlbumCommand { get;  }
+        public ICommand AddSongCommand { get; }
+
+        // IMPORTANT: name textboxes, refer to them here and add info into a variable
+
+        public string AlbumName;
+        public string AlbumCover; // path to image 
+        public List<Song> SongArray = new();
 
         public FactoryViewModel(NavigationStore navigationStore)
         {
@@ -25,6 +33,8 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
 
             // CreateAlbumCommand uses navigationservice, which is right above, it is going to take the parameter from factory view model and pass it on
             CreateAlbumCommand = new CreateAlbumCommand(this, navigationService);
+
+            AddSongCommand = new AddSongCommand(this);
 
 
         }

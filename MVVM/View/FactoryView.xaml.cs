@@ -33,5 +33,7 @@ namespace Vinyl_Flare.MVVM.View
             //MainViewModel.CurrentView = new SuccessViewModel;
             
         }
+
+
     }
 }

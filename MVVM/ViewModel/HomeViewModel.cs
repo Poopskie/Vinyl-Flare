@@ -17,7 +17,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         public HomeViewModel()
         {
-            _album = album; 
+
         }
     }
 }

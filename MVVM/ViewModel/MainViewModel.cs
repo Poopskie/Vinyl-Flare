@@ -6,15 +6,17 @@ using Vinyl_Flare.MVVM.Store;
 namespace Vinyl_Flare.MVVM.ViewModel
 {
 
-    internal class MainViewModel : ViewModelBase // always showing, calls upon other views
+    public class MainViewModel : ViewModelBase // always showing, calls upon other views
     {
         //all the new stuff for MVVM
         private readonly NavigationStore _navigationStore;
+        private readonly SideBarViewModel SideBar;
 
         public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
-        public MainViewModel(NavigationStore navigationStore)
+        public MainViewModel(NavigationStore navigationStore, SideBarViewModel sideBarViewModel)
         {
+            SideBar = sideBarViewModel;
             _navigationStore = navigationStore;
 
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;

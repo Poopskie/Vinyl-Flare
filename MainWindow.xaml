@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vinyl_Flare"
+        xmlns:stores="clr-namespace:Vinyl_Flare.MVVM.Store"
         xmlns:viewModel="clr-namespace:Vinyl_Flare.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1380"
@@ -12,10 +13,6 @@
         Background="Transparent"
         WindowStyle="ThreeDBorderWindow" Icon="/Images/milimnava.jpg">
     <!--AllowsTransparency="True"-->
-
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
 
 
     <Border Background="LightGray" CornerRadius="20">
@@ -32,11 +29,15 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
-            <ContentControl Margin="10" Grid.RowSpan="2" Grid.ColumnSpan ="2"
-                            Content = "{Binding CurrentView}"/>
+            <ContentControl Margin="10" Grid.RowSpan="2" Grid.ColumnSpan ="2" 
+                            Content = "{Binding CurrentViewModel}">
+                <ContentControl.DataContext>
+                    <stores:NavigationStore/>
+                </ContentControl.DataContext>
+            </ContentControl>
 
 
-            <!-- Button to hide/unhide buttons -->
+                <!-- Button to hide/unhide buttons -->
 
             <StackPanel Margin="0,0,0,0" HorizontalAlignment="Stretch">
 
@@ -87,24 +88,28 @@
                 </ToggleButton>
 
 
-                <StackPanel HorizontalAlignment="Stretch" x:Name="SideMenu">
+                <StackPanel HorizontalAlignment="Stretch" x:Name="SideMenu"
+                            >
+                    <StackPanel.DataContext>
+                        <viewModel:SideBarViewModel/>
+                    </StackPanel.DataContext>
                     
                     <!-- Menus buttons -->
                     <RadioButton Content="Home" Height="75"
                                  FontSize="24" FontFamily="Comic Sans MS"
                                  Style="{StaticResource MenuButtonTheme}"
-                                 IsChecked="True" Command="{Binding HomeViewCommand}"/>
+                                 IsChecked="True" Command="{Binding NavigateHomeCommand}"/>
 
                     <RadioButton Content="Library" Height="75"
                                  FontSize="24" FontFamily="Comic Sans MS"
                                  Style="{StaticResource MenuButtonTheme}"
-                                 Command="{Binding LibraryViewCommand}"/>
+                                 Command="{Binding NavigateLibraryCommand}"/>
 
 
                     <RadioButton Content="Factory" Height="75"
                                  FontSize="24" FontFamily="Comic Sans MS"
                                  Style="{StaticResource MenuButtonTheme}"
-                                 Command="{Binding FactoryViewCommand}"/>
+                                 Command="{Binding NavigateFactoryCommand}"/>
                     
                     
                 </StackPanel>

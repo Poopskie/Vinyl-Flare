@@ -39,8 +39,8 @@ namespace Vinyl_Flare
         public string SongName { get; set; }
         public string URL { get; set; } // Path to song
 
-        public int AlbumId { get; set; }
-        public Album Album { get; set; } // making an album variable in this class
+        public int? AlbumId { get; set; }
+        public Album? Album { get; set; } // making an album variable in this class
 
     }
     
