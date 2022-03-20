@@ -15,12 +15,13 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
 
         public FactoryViewModel(NavigationStore navigationStore)
         {
-            ShowSuccessCommand = new NavigateCommand<SuccessViewModel>(new NavigationService<SuccessViewModel>(
-                navigationStore, () => new SuccessViewModel(navigationStore)));
+            // old function that did not send data of album
+           // ShowSuccessCommand = new NavigateCommand<SuccessViewModel>(new NavigationService<SuccessViewModel>(
+             //   navigationStore, () => new SuccessViewModel(navigationStore)));
 
             // call back function () =>
-            ParameterNavigationService<Album, LibraryViewModel> navigationService = new ParameterNavigationService<Album, LibraryViewModel>(
-                navigationStore, (parameter) => new LibraryViewModel(parameter, navigationStore));
+            ParameterNavigationService<Album, SuccessViewModel> navigationService = new ParameterNavigationService<Album, SuccessViewModel>(
+                navigationStore, (parameter) => new SuccessViewModel(parameter, navigationStore));
 
             // CreateAlbumCommand uses navigationservice, which is right above, it is going to take the parameter from factory view model and pass it on
             CreateAlbumCommand = new CreateAlbumCommand(this, navigationService);

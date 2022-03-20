@@ -10,7 +10,11 @@ namespace Vinyl_Flare.MVVM.ViewModel
 {
     public class LibraryViewModel : ViewModelBase
     {
-        public LibraryViewModel(Album album, NavigationStore navigationStore)
+
+        //Used to be: public LibararyViewModel(Album album, NavigationStore navigationStore)
+        // don't need to recieve album here, cuz we will simply add to database in the command.
+
+        public LibraryViewModel(NavigationStore navigationStore)
         {
 
         }

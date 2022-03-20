@@ -23,6 +23,12 @@ namespace Vinyl_Flare.MVVM.ViewModel
             NavigateHomeCommand = new NavigateCommand<HomeViewModel>(new NavigationService<HomeViewModel>(
                 navigationStore, () => new HomeViewModel()));
 
+            NavigateLibraryCommand = new NavigateCommand<LibraryViewModel>(new NavigationService<LibraryViewModel>(
+                navigationStore, () => new LibraryViewModel(navigationStore)));
+
+            NavigateFactoryCommand = new NavigateCommand<FactoryViewModel>(new NavigationService<FactoryViewModel>(
+                navigationStore, () => new FactoryViewModel(navigationStore)));
+
 
         }
 

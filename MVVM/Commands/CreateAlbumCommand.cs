@@ -13,9 +13,9 @@ namespace Vinyl_Flare.MVVM.Commands
     public class CreateAlbumCommand : CommandBase
     {
         private readonly FactoryViewModel _viewModel; // current viewmodel information
-        private readonly ParameterNavigationService<Album, LibraryViewModel> _navigationService;
+        private readonly ParameterNavigationService<Album, SuccessViewModel> _navigationService;
 
-        public CreateAlbumCommand(FactoryViewModel viewModel, ParameterNavigationService<Album, LibraryViewModel> navigationService)
+        public CreateAlbumCommand(FactoryViewModel viewModel, ParameterNavigationService<Album, SuccessViewModel> navigationService)
         {
             _viewModel = viewModel;
             _navigationService = navigationService;
