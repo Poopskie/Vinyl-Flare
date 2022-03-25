@@ -9,9 +9,10 @@ namespace Vinyl_Flare.MVVM.ViewModel
     public class MainViewModel : ViewModelBase // always showing, calls upon other views
     {
         //all the new stuff for MVVM
-        private readonly NavigationStore _navigationStore;
-        private readonly SideBarViewModel SideBar;
+        public readonly NavigationStore _navigationStore;
+        public readonly SideBarViewModel SideBar;
 
+        // points to the navigationstores view model
         public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
         public MainViewModel(NavigationStore navigationStore, SideBarViewModel sideBarViewModel)

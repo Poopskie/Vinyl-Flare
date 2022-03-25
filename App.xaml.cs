@@ -20,12 +20,16 @@ namespace Vinyl_Flare
         {
             NavigationStore navigationStore = new NavigationStore();
             SideBarViewModel sideBarViewModel = new SideBarViewModel(navigationStore);
-            navigationStore.CurrentViewModel = new MainViewModel(navigationStore, sideBarViewModel);
+            navigationStore.CurrentViewModel = new HomeViewModel();
 
-            MainWindow = new MainWindow()
+            // This is not displaying the MainWindow, at all...
+            // but i need it to use mainviewmodel as a datacontext
+            MainWindow mainWindow = new()
             {
-                DataContext = navigationStore
+                 DataContext = new MainViewModel(navigationStore, sideBarViewModel)
             };
+
+            mainWindow.Show();
             
             base.OnStartup(e);
         }
