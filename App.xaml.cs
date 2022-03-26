@@ -19,8 +19,9 @@ namespace Vinyl_Flare
         protected override void OnStartup(StartupEventArgs e)
         {
             NavigationStore navigationStore = new NavigationStore();
-            SideBarViewModel sideBarViewModel = new SideBarViewModel(navigationStore);
             navigationStore.CurrentViewModel = new HomeViewModel();
+
+            SideBarViewModel sideBarViewModel = new SideBarViewModel(navigationStore);
 
             // This is not displaying the MainWindow, at all...
             // but i need it to use mainviewmodel as a datacontext

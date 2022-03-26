@@ -9,8 +9,8 @@ namespace Vinyl_Flare.MVVM.Commands
 {
     public class AddSongCommand : CommandBase
     {
-        private FactoryViewModel _viewModel;
-        private Song newSong;
+        private readonly FactoryViewModel _viewModel;
+        private Song newSong = new(); // make sure to initialize Song
 
         public AddSongCommand(FactoryViewModel viewModel)
         {
@@ -23,15 +23,18 @@ namespace Vinyl_Flare.MVVM.Commands
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.Title = "Select Song";
 
-            // This supposidly creates the dialog
-            Nullable<bool> result = dialog.ShowDialog();
 
             //settings for the box
-            dialog.Filter = "Audio Files|*.mp4;*.wav;*.ra;*.ram;*.au;*.aiff";
+            dialog.DefaultExt = ".mp3";
+            dialog.Filter = "Audio Files|*.mp3;*.wav;*.ra;*.ram;*.au;*.aiff";
             dialog.CheckPathExists = true;
             dialog.CheckFileExists = true;
+
             // This would be the next step, multiple songs
             //      dialog.Multiselect = true;
+
+            // This supposidly creates the dialog
+            Nullable<bool> result = dialog.ShowDialog(); // show dialog after settings applied
 
             if (result == true)
             { // here is the logic for the information transfer

@@ -22,7 +22,7 @@ namespace Vinyl_Flare
     {
         public MainWindow()
         {
-           
+            InitializeComponent(); // Does not display without
         }
         // Toggle Button Commands for fullscreen
         private void btnFullScreen_Checked(object sender, RoutedEventArgs e)

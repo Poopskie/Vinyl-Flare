@@ -87,7 +87,8 @@
             <Button Width="150" Height="50" Margin="210 0 0 0" FontStyle="Italic"
                     Style="{StaticResource FactoryButtonTheme}"
                     Content="Add Song" FontFamily="Comic Sans MS"
-                    FontSize="16" VerticalAlignment="Top"/>
+                    FontSize="16" VerticalAlignment="Top"
+                    Command="{Binding AddSongCommand}"/>
 
             <Button Width="150" Height="50" Margin="50 0 0 0" FontStyle="Italic"
                     Style="{StaticResource FactoryButtonTheme}"
