@@ -29,7 +29,7 @@ namespace Vinyl_Flare.MVVM.Commands
             {
                 AlbumId = 1, // replace with db.album.count + 1
                 AlbumName = $"{_viewModel.AlbumName}",
-                //Songs = 
+                Songs = _viewModel.SongArray,
                 Image = $"{_viewModel.AlbumCover}"
             };
 

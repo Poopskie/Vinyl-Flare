@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MVVM\Components\RemoveSongMenus.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\View\FactoryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="MVVM\Components\RemoveSongMenus.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MVVM\View\FactoryView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -34,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\SuccessView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\AlbumProgressBar.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Themes\FactoryButtonTheme.xaml">

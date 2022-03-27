@@ -27,13 +27,6 @@ namespace Vinyl_Flare.MVVM.View
         }
 
 
-        private void btnSubmit_Click(object sender, RoutedEventArgs e)
-        {
-            AlbumName.Text = "heeee";
-            //MainViewModel.CurrentView = new SuccessViewModel;
-            
-        }
-
 
     }
 }

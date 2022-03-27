@@ -27,7 +27,8 @@ namespace Vinyl_Flare
         public int AlbumId { get; set; }
         public string AlbumName { get; set; }
 
-        public List<Song> Songs { get; } = new();
+        public List<Song> Songs { get; set; } = new();
+        // making sure to declare Songs list
 
         public string Image { get; set; }
 

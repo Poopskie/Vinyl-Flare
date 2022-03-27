@@ -9,7 +9,7 @@ namespace Vinyl_Flare.MVVM.Commands
 {
     public class AddSongCommand : CommandBase
     {
-        private readonly FactoryViewModel _viewModel;
+        private FactoryViewModel _viewModel { get; set; } // need to edit values in here
         private Song newSong = new(); // make sure to initialize Song
 
         public AddSongCommand(FactoryViewModel viewModel)
@@ -42,7 +42,7 @@ namespace Vinyl_Flare.MVVM.Commands
                 newSong.SongName = dialog.SafeFileName; // name of file without paht
                 newSong.URL = dialog.FileName; // path of file
 
-                _viewModel.SongArray.Add(newSong); 
+                _viewModel.SongArray.Add(newSong); // might not actually edit the running instance
 
             }
 

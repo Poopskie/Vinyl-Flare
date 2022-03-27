@@ -9,7 +9,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
 {
     internal class HomeViewModel : ViewModelBase
     {
-        private readonly Album _album;
+        private readonly Album _album = new();
 
         public string AlbumName => _album.AlbumName;
         public string AlbumImage => _album.Image;

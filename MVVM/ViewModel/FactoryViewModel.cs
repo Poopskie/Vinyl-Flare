@@ -13,13 +13,24 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
     {
         public ICommand ShowSuccessCommand { get; }
         public ICommand CreateAlbumCommand { get;  }
-        public ICommand AddSongCommand { get; }
+        public ICommand AddSongCommand { get; } // I NEED TO TEST THESE
+        public ICommand AddImageCommand { get; }
+        public ICommand RemoveSongCommand { get; }
 
         // IMPORTANT: name textboxes, refer to them here and add info into a variable
 
-        public string AlbumName;
-        public string AlbumCover; // path to image 
-        public List<Song> SongArray = new();
+        public string AlbumName { get; set; }
+        public string AlbumCover { get; set; } // path to image 
+
+        private List<Song> _songArray; // private version
+        public List<Song> SongArray // creating property to be accessed
+        {
+            get => _songArray;
+            set
+            {
+                _songArray = value;
+            }
+        }
 
         public FactoryViewModel(NavigationStore navigationStore)
         {
@@ -28,6 +39,8 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
              //   navigationStore, () => new SuccessViewModel(navigationStore)));
 
             // call back function () =>
+
+            // constructing instance of navigationService
             ParameterNavigationService<Album, SuccessViewModel> navigationService = new ParameterNavigationService<Album, SuccessViewModel>(
                 navigationStore, (parameter) => new SuccessViewModel(parameter, navigationStore));
 
@@ -35,6 +48,10 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
             CreateAlbumCommand = new CreateAlbumCommand(this, navigationService);
 
             AddSongCommand = new AddSongCommand(this);
+
+            AddImageCommand = new AddImageCommand(this);
+
+            RemoveSongCommand = new RemoveSongCommand(this);
 
 
         }

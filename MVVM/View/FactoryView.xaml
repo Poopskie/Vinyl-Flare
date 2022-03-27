@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vinyl_Flare.MVVM.View"
              xmlns:viewModel="clr-namespace:Vinyl_Flare.MVVM.ViewModel" 
+             xmlns:components="clr-namespace:Vinyl_Flare.MVVM.Components"
              d:DataContext="{d:DesignInstance Type=viewModel:FactoryViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920"
@@ -29,6 +30,11 @@
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
+
+        <components:RemoveSongMenus Visibility="Hidden"
+                                    x:Name="removeSongMenus"
+                                    Grid.ColumnSpan="2" Grid.RowSpan="6"
+                                    Margin="400 200"/>
 
         <Border Grid.ColumnSpan="2" Grid.RowSpan="6" BorderThickness="5"
                 BorderBrush="Gray" Margin="400 25"/>
@@ -57,13 +63,13 @@
                        HorizontalAlignment="Center" VerticalAlignment="Center"
                        FontFamily="Comic Sans MS"/>
 
-            <Image Source="/Images/milimnava.jpg" Margin="50 0 50 0"/>
-
+            <Image Source="{Binding AlbumCover}" Margin="50 0 50 0"/>
+            <!-- {Binding AlbumCover} -->
 
             <Button Width="150" Height="50" 
                     Style="{StaticResource FactoryButtonTheme}"
                     Content="Select Cover" FontFamily="Comic Sans MS"
-                    FontSize="16"/>
+                    FontSize="16" Command="{Binding AddImageCommand}"/>
 
         </StackPanel>
 
@@ -76,13 +82,18 @@
 
             <TextBlock Margin="50 10 50 0" FontSize="20" 
                        FontFamily="Comic Sans MS" TextWrapping="Wrap">
-                1. peeeeee <!-- Somehow set variables to these names -->
-                <LineBreak/>
-                2. poo
-                <LineBreak/>
-                3. penis
-
+                poopie
+                
+                
             </TextBlock>
+
+            <!-- Using For loop to display names of the songs in he array -->
+            <ContentControl Margin="75 10" FontSize="20"
+                            FontFamily="Comic Sans MS"
+                            Content="{Binding SongArray[0].SongName}"/>
+
+
+
 
             <Button Width="150" Height="50" Margin="210 0 0 0" FontStyle="Italic"
                     Style="{StaticResource FactoryButtonTheme}"
@@ -93,7 +104,8 @@
             <Button Width="150" Height="50" Margin="50 0 0 0" FontStyle="Italic"
                     Style="{StaticResource FactoryButtonTheme}"
                     Content="Remove Song" FontFamily="Comic Sans MS"
-                    FontSize="16" VerticalAlignment="Top"/>
+                    FontSize="16" VerticalAlignment="Top"
+                    Command="{Binding RemoveSongCommand}"/>
 
         </StackPanel>
 
@@ -103,8 +115,8 @@
                 Style="{StaticResource FactoryButtonTheme}"
                 Content="Create Album" FontFamily="Comic Sans MS"
                 FontSize="24" HorizontalAlignment="Left" Margin="286 0 0 50" 
-                VerticalAlignment="Center" Click="btnSubmit_Click"
-                x:Name="btnSubmit"/>
+                VerticalAlignment="Center" 
+                Command="{Binding CreateAlbumCommand}"/>
         <!-- I think I need to do more work in C# to switch this view from inside -->
 
 
