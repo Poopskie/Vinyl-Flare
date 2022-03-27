@@ -69,7 +69,10 @@
             <Button Width="150" Height="50" 
                     Style="{StaticResource FactoryButtonTheme}"
                     Content="Select Cover" FontFamily="Comic Sans MS"
-                    FontSize="16" Command="{Binding AddImageCommand}"/>
+                    FontSize="16" 
+                    Command="{Binding AddImageCommand}"/>
+            <!-- Either make a converter or some other method to make image display 
+            It seems that the information is going through thou-->
 
         </StackPanel>
 

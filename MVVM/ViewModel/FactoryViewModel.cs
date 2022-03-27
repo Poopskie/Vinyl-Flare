@@ -20,7 +20,11 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
         // IMPORTANT: name textboxes, refer to them here and add info into a variable
 
         public string AlbumName { get; set; }
-        public string AlbumCover { get; set; } // path to image 
+        private string _albumCover;
+        public string AlbumCover {
+            get => _albumCover;
+            set { _albumCover = value; }
+        } // path to image 
 
         private List<Song> _songArray; // private version
         public List<Song> SongArray // creating property to be accessed
