@@ -11,7 +11,7 @@
              Background="AliceBlue">
    
     <Grid>
-        <ContentControl Content="{Binding _songList[0].SongName}"
+        <ContentControl Content="{Binding SongArray[0].SongName}"
                             />
     </Grid>
 </UserControl>

@@ -29,6 +29,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
             _navigationStore = navigationStore;
 
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+            // Once invoked, method added will be triggered
 
         }
 

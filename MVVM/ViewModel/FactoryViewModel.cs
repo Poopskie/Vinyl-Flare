@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using Vinyl_Flare.Core;
 using Vinyl_Flare.MVVM.Commands;
 using Vinyl_Flare.MVVM.Service;
@@ -17,13 +18,20 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
         public ICommand AddImageCommand { get; }
         public ICommand RemoveSongCommand { get; }
 
+        // update to display image selection
+        private event Action ImagePropertyChanged;
+
         // IMPORTANT: name textboxes, refer to them here and add info into a variable
 
         public string AlbumName { get; set; }
-        private string _albumCover;
-        public string AlbumCover {
+
+        private BitmapImage _albumCover; // Basically working, value comes in, just need to notify
+        public BitmapImage AlbumCover {
             get => _albumCover;
-            set { _albumCover = value; }
+            set { 
+                _albumCover = value;
+                OnImagePropertyChanged(); // Trigger prop changed thing
+            }
         } // path to image 
 
         private List<Song> _songArray; // private version
@@ -58,6 +66,11 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
             RemoveSongCommand = new RemoveSongCommand(this);
 
 
+        }
+        
+        private void OnImagePropertyChanged() // This may not be the problemm
+        {
+            OnPropertyChanged(nameof(_albumCover)); // tells display to refresh
         }
 
 
