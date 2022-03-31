@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\obj\Debug\net6.0-windows\
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\
 Vinyl_Flare
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\App.xaml
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\App.xaml
 10560902890
 
 362049600722
-212-286516565
+212141307694
 MainWindow.xaml;MVVM\Components\RemoveSongMenus.xaml;MVVM\View\FactoryView.xaml;MVVM\View\HomeView.xaml;MVVM\View\LibraryView.xaml;MVVM\View\SuccessView.xaml;Themes\AlbumProgressBar.xaml;Themes\FactoryButtonTheme.xaml;Themes\MenuButtonTheme.xaml;Themes\TextBoxTheme.xaml;
 
-False
+True
 

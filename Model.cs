@@ -36,12 +36,20 @@ namespace Vinyl_Flare
 
     public class Song
     {
-        public int Id { get; set; }
+        public int Id { get; set; } // nullable to avoid errors
         public string SongName { get; set; }
         public string URL { get; set; } // Path to song
 
         public int? AlbumId { get; set; }
         public Album? Album { get; set; } // making an album variable in this class
+
+        public Song(int id, string title, string link)
+        {
+            Id = id;
+            SongName = title;
+            URL = link;
+
+        }
 
     }
     

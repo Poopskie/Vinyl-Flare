@@ -41,8 +41,10 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
             set
             {
                 _songArray = value;
+                OnSongArrayPropertyChanged();
             }
         }
+
 
         public FactoryViewModel(NavigationStore navigationStore)
         {
@@ -70,7 +72,11 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
         
         private void OnImagePropertyChanged() // This may not be the problemm
         {
-            OnPropertyChanged(nameof(_albumCover)); // tells display to refresh
+            OnPropertyChanged(nameof(AlbumCover)); // tells display to refresh
+        }
+        private void OnSongArrayPropertyChanged()
+        {
+            OnPropertyChanged(nameof(SongArray));
         }
 
 

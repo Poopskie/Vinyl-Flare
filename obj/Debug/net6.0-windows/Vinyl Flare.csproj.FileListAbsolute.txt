@@ -141,3 +141,6 @@ C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\obj\Debug\net6.0-windows\Vinyl 
 C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\obj\Debug\net6.0-windows\Vinyl Flare.csproj.CopyComplete
 C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\obj\Debug\net6.0-windows\Vinyl Flare.genruntimeconfig.cache
 C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\obj\Debug\net6.0-windows\ref\Vinyl Flare.dll
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Themes\AlbumProgressBar.baml
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\Components\RemoveSongMenus.g.cs
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\Components\RemoveSongMenus.baml

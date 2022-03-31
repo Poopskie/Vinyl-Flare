@@ -10,12 +10,12 @@ namespace Vinyl_Flare.MVVM.Commands
     public class AddSongCommand : CommandBase
     {
         private FactoryViewModel _viewModel { get; set; } // need to edit values in here
-        private Song newSong = new(); // make sure to initialize Song
+        private Song newSong; // make sure to initialize Song
 
         public AddSongCommand(FactoryViewModel viewModel)
         {
             _viewModel = viewModel;
-            // CURRENT PROBLEM: might not edit array in view model, but just the clone of it
+            // refers directly and edits the Factory Viewmodel
         }
 
         public override void Execute(object parameter)
@@ -38,9 +38,13 @@ namespace Vinyl_Flare.MVVM.Commands
 
             if (result == true)
             { // here is the logic for the information transfer
-                newSong.Id = _viewModel.SongArray.Count + 1;
-                newSong.SongName = dialog.SafeFileName; // name of file without paht
-                newSong.URL = dialog.FileName; // path of file
+                // uised to be: _viewModel.SongArray.Count()
+            //    newSong.Id =  1;
+            //    newSong.SongName = dialog.SafeFileName; // name of file without paht
+            //    newSong.URL = dialog.FileName; // path of file
+
+                //using constructor instead
+                newSong = new Song(1, dialog.SafeFileName, dialog.FileName);
 
                 _viewModel.SongArray.Add(newSong); // might not actually edit the running instance
 

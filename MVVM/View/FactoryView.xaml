@@ -64,7 +64,6 @@
                        FontFamily="Comic Sans MS"/>
 
             <Image Source="{Binding AlbumCover}" Margin="50 0 50 0"/>
-            <!-- {Binding AlbumCover} -->
 
             <Button Width="150" Height="50" 
                     Style="{StaticResource FactoryButtonTheme}"
