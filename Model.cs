@@ -11,15 +11,15 @@ namespace Vinyl_Flare
         public DbSet<Album> Albums { get; set; }
         public string DbPath { get; set; }
 
-        public AlbumContext() // Constructor
+        public AlbumContext() // Constructor for path to db
         {
             var folder = Environment.SpecialFolder.LocalApplicationData;
             var path = Environment.GetFolderPath(folder);
-            DbPath = System.IO.Path.Join(path, "test.db");
+            DbPath = System.IO.Path.Join(path, "test.db"); // path to db
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source={DbPath}");
+            => options.UseSqlite($"Data Source={DbPath}"); // sqlist on db location
 
     }
     public class Album
@@ -43,12 +43,11 @@ namespace Vinyl_Flare
         public int? AlbumId { get; set; }
         public Album? Album { get; set; } // making an album variable in this class
 
-        public Song(int id, string title, string link)
+        public Song(int newId, string newSongName, string newURL)
         {
-            Id = id;
-            SongName = title;
-            URL = link;
-
+            Id = newId;
+            SongName = newSongName;
+            URL = newURL;
         }
 
     }

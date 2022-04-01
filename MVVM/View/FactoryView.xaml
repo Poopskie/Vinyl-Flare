@@ -13,8 +13,7 @@
 
 
 
-    
-    
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -82,14 +81,22 @@
                        HorizontalAlignment="Center" VerticalAlignment="Top"
                        FontFamily="Comic Sans MS"/>
 
-            <TextBlock Margin="50 10 50 0" FontSize="20" 
-                       FontFamily="Comic Sans MS" TextWrapping="Wrap">
-                poopie
+            <!-- Diplays Names of Songs -->
+            <ListView Margin="50 10 50 0" FontSize="20" 
+                       FontFamily="Comic Sans MS"
+                      ItemsSource="{Binding SongArray}">
+                <ListView.View>
+                    <GridView>
+            <!-- Only updates if I maximize window for some reason -->
+                        <GridViewColumn Header="Added Songs" Width="200"
+                                        DisplayMemberBinding="{Binding SongName}"/>
+                    </GridView>
+                    
+                </ListView.View>
                 
-                
-            </TextBlock>
 
-            <!-- Using For loop to display names of the songs in he array -->
+            </ListView>
+
             <ContentControl Margin="75 10" FontSize="20"
                             FontFamily="Comic Sans MS"
                             Content="{Binding SongArray[0].SongName}"/>

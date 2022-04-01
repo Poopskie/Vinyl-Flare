@@ -11,6 +11,7 @@ namespace Vinyl_Flare.MVVM.Commands
     {
         private FactoryViewModel _viewModel { get; set; } // need to edit values in here
         private Song newSong; // make sure to initialize Song
+        private List<Song> newSongList = new();
 
         public AddSongCommand(FactoryViewModel viewModel)
         {
@@ -39,14 +40,16 @@ namespace Vinyl_Flare.MVVM.Commands
             if (result == true)
             { // here is the logic for the information transfer
                 // uised to be: _viewModel.SongArray.Count()
-            //    newSong.Id =  1;
+          //      newSong.Id =  1;
             //    newSong.SongName = dialog.SafeFileName; // name of file without paht
-            //    newSong.URL = dialog.FileName; // path of file
+              //  newSong.URL = dialog.FileName; // path of file
 
-                //using constructor instead
+               // using constructor instead
                 newSong = new Song(1, dialog.SafeFileName, dialog.FileName);
 
-                _viewModel.SongArray.Add(newSong); // might not actually edit the running instance
+                newSongList = _viewModel.SongArray; // getting copy
+                newSongList.Add(newSong); // adding the new song
+                _viewModel.SongArray = newSongList; // setting old value
 
             }
 

@@ -18,8 +18,6 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
         public ICommand AddImageCommand { get; }
         public ICommand RemoveSongCommand { get; }
 
-        // update to display image selection
-        private event Action ImagePropertyChanged;
 
         // IMPORTANT: name textboxes, refer to them here and add info into a variable
 
@@ -66,6 +64,9 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
             AddImageCommand = new AddImageCommand(this);
 
             RemoveSongCommand = new RemoveSongCommand(this);
+
+            // make sure SongArray isn't null
+            SongArray = new();
 
 
         }
