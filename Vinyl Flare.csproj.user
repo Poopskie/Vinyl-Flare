@@ -51,6 +51,9 @@
     <Page Update="Themes\MenuButtonTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\SongNameListTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Themes\TextBoxTheme.xaml">
       <SubType>Designer</SubType>
     </Page>

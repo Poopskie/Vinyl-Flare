@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="Themes/FactoryButtonTheme.xaml"/>
                 <ResourceDictionary Source="Themes/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="Themes/AlbumProgressBar.xaml"/>
+                <ResourceDictionary Source="Themes/SongNameListTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

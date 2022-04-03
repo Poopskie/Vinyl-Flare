@@ -26,7 +26,7 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
 
@@ -36,7 +36,7 @@
                                     Margin="400 200"/>
 
         <Border Grid.ColumnSpan="2" Grid.RowSpan="6" BorderThickness="5"
-                BorderBrush="Gray" Margin="400 25"/>
+                BorderBrush="Gray" Margin="300 25"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
 
@@ -69,57 +69,92 @@
                     Content="Select Cover" FontFamily="Comic Sans MS"
                     FontSize="16" 
                     Command="{Binding AddImageCommand}"/>
-            <!-- Either make a converter or some other method to make image display 
-            It seems that the information is going through thou-->
 
         </StackPanel>
 
 
-        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1">
+        <!-- Buttons for adding songs -->
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1"
+                    Margin="0 0 0 30">
 
             <TextBlock Text="List of Songs:" FontSize="30"
                        HorizontalAlignment="Center" VerticalAlignment="Top"
-                       FontFamily="Comic Sans MS"/>
+                       FontFamily="Comic Sans MS" Margin="0 50"/>
 
+            <StackPanel Orientation="Horizontal" Margin="50 0">
+
+                <Button Width="150" Height="50" Margin="50" FontStyle="Italic"
+                        Style="{StaticResource FactoryButtonTheme}"
+                        Content="Add Song" FontFamily="Comic Sans MS"
+                        FontSize="16" VerticalAlignment="Top"
+                        Command="{Binding AddSongCommand}"/>
+
+                <Button Width="150" Height="50" Margin="50" FontStyle="Italic"
+                        Style="{StaticResource FactoryButtonTheme}"
+                        Content="Remove Song" FontFamily="Comic Sans MS"
+                        FontSize="16" VerticalAlignment="Top"
+                        Command="{Binding RemoveSongCommand}"/>
+            
+            </StackPanel>
+            
             <!-- Diplays Names of Songs -->
-            <ListView Margin="50 10 50 0" FontSize="20" 
-                       FontFamily="Comic Sans MS"
-                      ItemsSource="{Binding SongArray}">
-                <ListView.View>
-                    <GridView>
-            <!-- Only updates if I maximize window for some reason -->
-                        <GridViewColumn Header="Added Songs" Width="200"
-                                        DisplayMemberBinding="{Binding SongName}"/>
-                    </GridView>
-                    
-                </ListView.View>
-                
 
-            </ListView>
-
-            <ContentControl Margin="75 10" FontSize="20"
-                            FontFamily="Comic Sans MS"
-                            Content="{Binding SongArray[0].SongName}"/>
-
-
-
-
-            <Button Width="150" Height="50" Margin="210 0 0 0" FontStyle="Italic"
-                    Style="{StaticResource FactoryButtonTheme}"
-                    Content="Add Song" FontFamily="Comic Sans MS"
-                    FontSize="16" VerticalAlignment="Top"
-                    Command="{Binding AddSongCommand}"/>
-
-            <Button Width="150" Height="50" Margin="50 0 0 0" FontStyle="Italic"
-                    Style="{StaticResource FactoryButtonTheme}"
-                    Content="Remove Song" FontFamily="Comic Sans MS"
-                    FontSize="16" VerticalAlignment="Top"
-                    Command="{Binding RemoveSongCommand}"/>
 
         </StackPanel>
 
-        
-         <!-- Submit button, should trigger other things -->
+        <ListView Margin="800 10 350 0" FontSize="30" 
+                  FontFamily="Comic Sans MS" BorderThickness="2"
+                  ItemsSource="{Binding SongArray}"
+                  Grid.Column="1" Grid.RowSpan="3" Grid.Row="2"
+                  BorderBrush="Black"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.View>
+                <GridView>
+                    <!-- This takes a second to refresh or maybe doesn't... -->
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate 
+                                        TargetType="{x:Type GridViewColumnHeader}">
+                                        <Border BorderBrush="Black" BorderThickness="0 0 0 1"
+                                                Padding="0 5">
+                                            <TextBlock Text="{TemplateBinding Content}"/>
+                                        </Border>
+
+                                    </ControlTemplate>
+
+
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+
+                    </GridView.ColumnHeaderContainerStyle>
+                    <!-- Only updates if I maximize window for some reason -->
+                    <GridViewColumn Header="Added Songs" Width="360"
+                                    DisplayMemberBinding="{Binding SongName}"/>
+                </GridView>
+
+
+            </ListView.View>
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Focusable" Value="False"/>
+                    <Setter Property="IsHitTestVisible" Value="False"/>
+                    <Setter Property="Margin" Value="0 5"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="16"/>
+
+                </Style>
+
+            </ListView.ItemContainerStyle>
+
+        </ListView>
+
+        <!-- Submit button, should trigger other things -->
         <Button Width="300" Height="100" Grid.Column="1" Grid.Row="5"
                 Style="{StaticResource FactoryButtonTheme}"
                 Content="Create Album" FontFamily="Comic Sans MS"
