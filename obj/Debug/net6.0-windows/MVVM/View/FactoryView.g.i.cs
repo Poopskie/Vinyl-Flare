@@ -71,7 +71,7 @@ namespace Vinyl_Flare.MVVM.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vinyl Flare;component/mvvm/view/factoryview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vinyl Flare;V1.0.0.0;component/mvvm/view/factoryview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\View\FactoryView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

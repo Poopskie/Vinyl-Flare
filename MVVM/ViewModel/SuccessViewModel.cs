@@ -22,8 +22,9 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         public ICommand NavigateHomeCommand { get; }
         public ICommand NavigateFactoryCommand { get; }
+        public ICommand CommitDatabaseCommand { get; }
 
-        private Album _album { get; } // private album info recieved
+        public Album _album { get; } // private album info recieved
         // use this variable to call on information recieved from factory
 
         public SuccessViewModel(Album album, NavigationStore navigationStore)
@@ -34,8 +35,15 @@ namespace Vinyl_Flare.MVVM.ViewModel
             NavigateHomeCommand = new NavigateCommand<HomeViewModel>(new NavigationService<HomeViewModel>
                 (navigationStore, () => new HomeViewModel()));
 
+            CommitDatabaseCommand = new CommitDatabaseCommand(this);
+
             _album = album;
+
+
+
+
         }
+
 
 
 

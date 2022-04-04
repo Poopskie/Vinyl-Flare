@@ -145,3 +145,4 @@ C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Themes\Al
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\Components\RemoveSongMenus.g.cs
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\Components\RemoveSongMenus.baml
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Themes\SongNameListTheme.baml
+C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\obj\Debug\net6.0-windows\Themes\SongNameListTheme.baml

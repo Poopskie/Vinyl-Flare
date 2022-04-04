@@ -1192,19 +1192,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jackie's PC\\.nuget\\packages\\": {}
+    "C:\\Users\\jacki\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jackie's PC\\source\\repos\\Vinyl Flare\\Vinyl Flare.csproj",
+      "projectUniqueName": "C:\\Users\\jacki\\source\\repos\\Poopskie\\Vinyl-Flare\\Vinyl Flare.csproj",
       "projectName": "Vinyl Flare",
-      "projectPath": "C:\\Users\\Jackie's PC\\source\\repos\\Vinyl Flare\\Vinyl Flare.csproj",
-      "packagesPath": "C:\\Users\\Jackie's PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jackie's PC\\source\\repos\\Vinyl Flare\\obj\\",
+      "projectPath": "C:\\Users\\jacki\\source\\repos\\Poopskie\\Vinyl-Flare\\Vinyl Flare.csproj",
+      "packagesPath": "C:\\Users\\jacki\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jacki\\source\\repos\\Poopskie\\Vinyl-Flare\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jackie's PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jacki\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
