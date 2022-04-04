@@ -45,7 +45,7 @@ namespace Vinyl_Flare.MVVM.Commands
               //  newSong.URL = dialog.FileName; // path of file
 
                // using constructor instead
-                newSong = new Song(1, dialog.SafeFileName, dialog.FileName);
+                newSong = new Song(_viewModel.SongArray.Count(), dialog.SafeFileName, dialog.FileName);
 
                 newSongList = _viewModel.SongArray; // getting copy
                 newSongList.Add(newSong); // adding the new song

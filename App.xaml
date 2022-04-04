@@ -28,6 +28,10 @@
             <DataTemplate DataType="{x:Type viewModel:FactoryViewModel}">
                 <view:FactoryView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SuccessViewModel}">
+                <view:SuccessView/>
+            </DataTemplate>
 <!--
             <ControlTemplate TargetType="{x:Type spinning:SpinningVinyl}">
                 
