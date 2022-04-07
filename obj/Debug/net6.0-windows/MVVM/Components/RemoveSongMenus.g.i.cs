@@ -54,7 +54,7 @@ namespace Vinyl_Flare.MVVM.Components {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Vinyl Flare;V1.0.0.0;component/mvvm/components/removesongmenus.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Vinyl Flare;component/mvvm/components/removesongmenus.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\Components\RemoveSongMenus.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -25,11 +25,18 @@
         <ProgressBar Grid.Column="1" Grid.Row="1"
                      Margin="10" FontSize="16"
                      FontFamily="Comic Sans MS"
-                     BorderThickness="5"
+                     BorderThickness="5" Visibility="Hidden"
                      Style="{StaticResource AlbumProgressBar}">
             <!-- Making Style for Progress Bar -->
             
-        </ProgressBar>    
-        
+        </ProgressBar>
+
+        <Button Content="Save Album"
+                Command="{Binding CommitDatabaseCommand}"
+                Grid.Column="1" Grid.RowSpan="3" Grid.Row="0"
+                Width="200" Height="200" FontFamily="Comic Sans MS"
+                FontSize="24"/>
+
+
     </Grid>
 </UserControl>

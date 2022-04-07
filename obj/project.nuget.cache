@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2eia+Qfwq3hN77k+OUpZ0fUuD5D1uo0IVLKHzXnSk+4VRwQLv3X8nY8cTPlKcPDpaKZvQ8zoHoveutMwBO3kbA==",
+  "dgSpecHash": "yiyKTSyiOSJULb/Fdq+hwgG1Ca/iQmzzGDXd7dCAQYXx4iOM0WJSHEmKwfZw+H2lGU4neoLSVbLffkhZgw9Nuw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jacki\\source\\repos\\Poopskie\\Vinyl-Flare\\Vinyl Flare.csproj",
   "expectedPackageFiles": [
@@ -10,11 +10,11 @@
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.3\\microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.3\\microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.3\\microsoft.entityframeworkcore.analyzers.6.0.3.nupkg.sha512",
-    "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.2\\microsoft.entityframeworkcore.design.6.0.2.nupkg.sha512",
+    "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.3\\microsoft.entityframeworkcore.design.6.0.3.nupkg.sha512",
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.3\\microsoft.entityframeworkcore.relational.6.0.3.nupkg.sha512",
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\6.0.3\\microsoft.entityframeworkcore.sqlite.6.0.3.nupkg.sha512",
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\6.0.3\\microsoft.entityframeworkcore.sqlite.core.6.0.3.nupkg.sha512",
-    "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.2\\microsoft.entityframeworkcore.tools.6.0.2.nupkg.sha512",
+    "C:\\Users\\jacki\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.3\\microsoft.entityframeworkcore.tools.6.0.3.nupkg.sha512",
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\jacki\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

@@ -23,16 +23,13 @@ namespace Vinyl_Flare.MVVM.Commands
 
         public override void Execute(object parameter)
         { // adding data to DB
-            using (var connection = new SqliteConnection("Data Source=test.db"))
+            // Referes to: AlbumContext which is my model
+            using (var db = new AlbumContext()) // using EF core to simplify syntax
             {
-                connection.Open();
-
-                var command = connection.CreateCommand();
-                command.CommandText =
-                    @"
+                db.Add(_album); // Adding the Album using EFcore instead of SQlite
+                db.SaveChanges();
 
 
-                    ";
             }
 
 

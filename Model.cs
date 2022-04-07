@@ -43,13 +43,6 @@ namespace Vinyl_Flare
         public int? AlbumId { get; set; }
         public Album? Album { get; set; } // making an album variable in this class
 
-        public Song(int newId, string newSongName, string newURL)
-        {
-            Id = newId;
-            SongName = newSongName;
-            URL = newURL;
-        }
-
     }
     
 }

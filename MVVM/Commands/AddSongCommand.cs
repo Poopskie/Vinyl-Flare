@@ -39,13 +39,16 @@ namespace Vinyl_Flare.MVVM.Commands
 
             if (result == true)
             { // here is the logic for the information transfer
-                // uised to be: _viewModel.SongArray.Count()
-          //      newSong.Id =  1;
-            //    newSong.SongName = dialog.SafeFileName; // name of file without paht
+              // uised to be: _viewModel.SongArray.Count()
+              //      newSong.Id =  1;
+              //    newSong.SongName = dialog.SafeFileName; // name of file without paht
               //  newSong.URL = dialog.FileName; // path of file
 
-               // using constructor instead
-                newSong = new Song(_viewModel.SongArray.Count(), dialog.SafeFileName, dialog.FileName);
+                // using constructor instead
+                newSong = new Song();
+                newSong.Id = _viewModel.SongArray.Count();
+                newSong.SongName = dialog.SafeFileName;
+                newSong.URL = dialog.FileName;
 
                 newSongList = _viewModel.SongArray; // getting copy
                 newSongList.Add(newSong); // adding the new song
