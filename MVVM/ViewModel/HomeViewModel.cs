@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Vinyl_Flare.MVVM.ViewModel
 {
-    internal class HomeViewModel : ViewModelBase
+    public class HomeViewModel : ViewModelBase
     {
         private readonly Album _album = new();
 
@@ -15,8 +15,9 @@ namespace Vinyl_Flare.MVVM.ViewModel
         public string AlbumImage => _album.Image;
 
 
-        public HomeViewModel()
+        public HomeViewModel(Album album = null) // default parameter for start
         {
+            _album = album;
 
         }
     }
