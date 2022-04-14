@@ -26,15 +26,13 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         public ICommand PlaySongCommand0;
 
-        public LibraryViewModel(NavigationStore navigationStore)
+        public LibraryViewModel(NavigationStore navigationStore, List<Album> albumsIn = null)
         {
-            using (var db = new AlbumContext()) // using EF core to simplify syntax
-            { // lambda b function, returns the albumid attribute of albums
-                albums = db.Albums.ToList(); // returns list of all the albums
-            }
 
             ParameterNavigationService<Album, HomeViewModel> navigationService = new ParameterNavigationService<Album, HomeViewModel>(
                 navigationStore, (parameter) => new HomeViewModel(parameter));
+
+            albums = albumsIn;
 
             PlaySongCommand0 = new PlaySongCommand(this, navigationService, 0);
 

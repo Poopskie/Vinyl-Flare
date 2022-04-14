@@ -17,6 +17,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
         public ICommand NavigateLibraryCommand { get; }
         public ICommand NavigateFactoryCommand { get; }
 
+
         public SideBarViewModel(NavigationStore navigationStore)
         {
 

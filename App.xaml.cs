@@ -18,6 +18,7 @@ namespace Vinyl_Flare
 
         protected override void OnStartup(StartupEventArgs e)
         {
+
             NavigationStore navigationStore = new NavigationStore();
             navigationStore.CurrentViewModel = new HomeViewModel();
 
