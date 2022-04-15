@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Windows.Media.Imaging;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -30,13 +32,14 @@ namespace Vinyl_Flare
         public List<Song> Songs { get; set; } = new();
         // making sure to declare Songs list
 
-        public string Image { get; set; }
+        [NotMapped]
+        public BitmapImage Image { get; set; } = new BitmapImage();
 
     }
 
     public class Song
     {
-        public int Id { get; set; } // nullable to avoid errors
+        public int SongId { get; set; } // nullable to avoid errors
         public string SongName { get; set; }
         public string URL { get; set; } // Path to song
 

@@ -14,6 +14,7 @@ namespace Vinyl_Flare.MVVM.Commands
     {
         private readonly FactoryViewModel _viewModel; // current viewmodel information
         private readonly ParameterNavigationService<Album, SuccessViewModel> _navigationService;
+        public int newID;
 
         public CreateAlbumCommand(FactoryViewModel viewModel, ParameterNavigationService<Album, SuccessViewModel> navigationService)
         {
@@ -24,14 +25,20 @@ namespace Vinyl_Flare.MVVM.Commands
         // IMPORTANT: Command will piece together all existing info in the viewmodel
         public override void Execute(object parameter)
         {
-            // taking parameter from FactoryViewModel
+            using (var db = new AlbumContext())
+            {
+                newID = db.Albums.Count() + 1;
+            }
+
             Album album = new Album()
             {
-                AlbumId = 1, // replace with db.album.count + 1
+                AlbumId = newID, // replace with db.album.count + 1
                 AlbumName = $"{_viewModel.AlbumName}",
                 Songs = _viewModel.SongArray,
-                Image = $"{_viewModel.AlbumCover}"
+                Image = _viewModel.AlbumCover
             };
+
+            // taking parameter from FactoryViewModel
 
 
             // then navigate to success after validating other details

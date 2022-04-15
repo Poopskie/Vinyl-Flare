@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace Vinyl_Flare.MVVM.ViewModel
 {
@@ -12,10 +13,10 @@ namespace Vinyl_Flare.MVVM.ViewModel
         private readonly Album _album = new();
 
         public string AlbumName => _album.AlbumName;
-        public string AlbumImage => _album.Image;
+        public BitmapImage AlbumImage => _album.Image;
 
 
-        public HomeViewModel(Album album = null) // default parameter for start
+        public HomeViewModel(Album? album = null) // default parameter for start
         {
             _album = album;
 

@@ -21,7 +21,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
         // 2 buttons, back to factory, and back to home (side bar won't be here when success is up)
 
         public ICommand NavigateHomeCommand { get; }
-        public ICommand NavigateFactoryCommand { get; }
+        public ICommand NavigateLibraryCommand { get; }
         public ICommand CommitDatabaseCommand { get; }
 
         public Album _album { get; } // private album info recieved
@@ -29,8 +29,8 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         public SuccessViewModel(Album album, NavigationStore navigationStore)
         {
-            NavigateFactoryCommand = new NavigateCommand<FactoryViewModel>(new NavigationService<FactoryViewModel>(
-                navigationStore, () => new FactoryViewModel(navigationStore)));
+            NavigateLibraryCommand = new NavigateCommand<LibraryViewModel>(new NavigationService<LibraryViewModel>(
+                navigationStore, () => new LibraryViewModel(navigationStore)));
 
             NavigateHomeCommand = new NavigateCommand<HomeViewModel>(new NavigationService<HomeViewModel>
                 (navigationStore, () => new HomeViewModel()));
@@ -38,10 +38,6 @@ namespace Vinyl_Flare.MVVM.ViewModel
             CommitDatabaseCommand = new CommitDatabaseCommand(this);
 
             _album = album;
-
-
-
-
         }
 
 

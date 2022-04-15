@@ -49,8 +49,8 @@
             
             <TextBox VerticalAlignment="Center" FontFamily="Comic Sans MS"
                      Margin="50" Width="400" Height="50" FontSize="30"
-                      Style="{StaticResource TextBoxTheme}"
-                     x:Name="AlbumName"/>
+                      Text="{Binding AlbumName}"/>
+                      <!--Style="{StaticResource TextBoxTheme}"-->
 
 
 

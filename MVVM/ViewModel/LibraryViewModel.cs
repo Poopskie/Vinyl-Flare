@@ -21,7 +21,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
         // either have a counter for top 3 then switch
         // OR have a draggable row of albums to choose from
 
-        public readonly List<Album> albums; // need the albums here to display them
+        public List<Album> albums { get; } // need the albums here to display them
         public int selected; // changes as clicked
 
         public ICommand PlaySongCommand0;
