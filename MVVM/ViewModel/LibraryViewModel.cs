@@ -26,6 +26,8 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         public ICommand PlaySongCommand0;
 
+        public Album album1 { get; set; }
+
         public LibraryViewModel(NavigationStore navigationStore, List<Album> albumsIn = null)
         {
 
@@ -35,6 +37,13 @@ namespace Vinyl_Flare.MVVM.ViewModel
             albums = albumsIn;
 
             PlaySongCommand0 = new PlaySongCommand(this, navigationService, 0);
+
+
+            album1 = albums[0];
+
+
+
+
 
         }
 

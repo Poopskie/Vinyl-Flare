@@ -35,7 +35,7 @@ namespace Vinyl_Flare.MVVM.Commands
                 AlbumId = newID, // replace with db.album.count + 1
                 AlbumName = $"{_viewModel.AlbumName}",
                 Songs = _viewModel.SongArray,
-                Image = _viewModel.AlbumCover
+                AlbumCoverURL = _viewModel._albumCover
             };
 
             // taking parameter from FactoryViewModel

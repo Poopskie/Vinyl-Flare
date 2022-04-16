@@ -23,6 +23,10 @@ namespace Vinyl_Flare.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("AlbumCoverURL")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("AlbumName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -34,7 +38,7 @@ namespace Vinyl_Flare.Migrations
 
             modelBuilder.Entity("Vinyl_Flare.Song", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SongId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -49,7 +53,7 @@ namespace Vinyl_Flare.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("SongId");
 
                     b.HasIndex("AlbumId");
 

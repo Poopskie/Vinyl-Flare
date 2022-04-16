@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Vinyl_Flare.MVVM.Commands
         private FactoryViewModel _viewModel { get; set; }
 
         private BitmapImage image = new();
+        private string albumcover;
 
         public AddImageCommand(FactoryViewModel viewModel)
         {
@@ -38,6 +40,11 @@ namespace Vinyl_Flare.MVVM.Commands
             { // here is the logic for the information transfer
 
                 image = new BitmapImage(new Uri(dialog.FileName));
+                albumcover = dialog.FileName;
+                
+
+
+                _viewModel._albumCover = albumcover;
 
                 _viewModel.AlbumCover = image; // path of image
 

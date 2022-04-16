@@ -32,10 +32,10 @@ namespace Vinyl_Flare
         public List<Song> Songs { get; set; } = new();
         // making sure to declare Songs list
 
-        [NotMapped]
-        public BitmapImage Image { get; set; } = new BitmapImage();
+        public string AlbumCoverURL { get; set; }
 
     }
+
 
     public class Song
     {

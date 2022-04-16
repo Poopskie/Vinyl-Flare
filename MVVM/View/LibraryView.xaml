@@ -29,18 +29,24 @@
             <TextBlock Text="{Binding albums[0].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
-            <Image Source="{Binding albums[0].Image}"
+            <Image Source="{Binding albums[0].AlbumCoverURL}"
                    Height="150"/>
 
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2"
                     Orientation="Vertical">
-            <TextBlock Text="{Binding albums[5].AlbumName}"
+            <TextBlock Text="{Binding albums[6].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
-            <Image Source="{Binding albums[4].Image}"
-                   Height="250"/>
+            <Image Height="250">
+                <Image.Source>
+                    <BitmapImage DecodePixelWidth="200" 
+                                 UriSource="{Binding albums[6].AlbumCoverURL}"
+                                 />
+                </Image.Source>
+                
+            </Image>
 
         </StackPanel>
 

@@ -23,11 +23,12 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
 
         public string AlbumName { get; set; }
 
-        private BitmapImage _albumCover; // Basically working, value comes in, just need to notify
+        private BitmapImage _bitAlbumCover; // Basically working, value comes in, just need to notify
+        public string _albumCover;
         public BitmapImage AlbumCover {
-            get => _albumCover;
+            get => _bitAlbumCover;
             set { 
-                _albumCover = value;
+                _bitAlbumCover = value;
                 OnImagePropertyChanged(); // Trigger prop changed thing
             }
         } // path to image 

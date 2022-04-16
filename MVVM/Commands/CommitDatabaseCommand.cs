@@ -13,6 +13,7 @@ namespace Vinyl_Flare.MVVM.Commands
     public class CommitDatabaseCommand : CommandBase
     {
         private readonly SuccessViewModel _viewModel;
+        public ICommand NavigateHomeCommand { get; }
         public ICommand NavigateLibraryCommand { get; }
         public Album _album { get; set; }
 
@@ -21,6 +22,7 @@ namespace Vinyl_Flare.MVVM.Commands
             _viewModel = viewModel; // getting data from viewModel
 
             NavigateLibraryCommand = _viewModel.NavigateLibraryCommand;
+            NavigateHomeCommand = _viewModel.NavigateHomeCommand;
         }
 
 
@@ -36,7 +38,7 @@ namespace Vinyl_Flare.MVVM.Commands
 
             }
 
-            NavigateLibraryCommand.Execute(parameter);
+            NavigateHomeCommand.Execute(parameter);
 
         }
 

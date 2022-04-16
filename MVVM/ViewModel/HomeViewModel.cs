@@ -13,7 +13,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
         private readonly Album _album = new();
 
         public string AlbumName => _album.AlbumName;
-        public BitmapImage AlbumImage => _album.Image;
+        public string AlbumImage => _album.AlbumCoverURL;
 
 
         public HomeViewModel(Album? album = null) // default parameter for start
