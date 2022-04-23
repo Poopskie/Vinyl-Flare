@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Vinyl_Flare.MVVM.View.PlaySongView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vinyl_Flare.MVVM.View" 
+             xmlns:Convertor="clr-namespace:Vinyl_Flare.Converters" 
+             xmlns:viewmodel="clr-namespace:Vinyl_Flare.MVVM.ViewModel" 
+             d:DataContext="{d:DesignInstance Type=viewmodel:PlaySongViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="1600"
+             Background="AliceBlue">
+    <UserControl.Resources>
+        <Convertor:StringToImage x:Key="StringToImage"/>
+    </UserControl.Resources>
+    
+    
+    <Grid>
+
+        <Border Height="620" Width="620" Background="White" CornerRadius="400"
+                Margin="0 0 0 200" HorizontalAlignment="Center">
+
+            <Grid HorizontalAlignment="Stretch" RenderTransformOrigin="0.5 0.5" 
+                  VerticalAlignment="Stretch">
+
+                <Image Source="/Images/vinyl.png" Margin="10"/>
+
+                <Image Source="{Binding AlbumImage, Converter={StaticResource StringToImage}}" 
+                       Margin="205"/>
+
+
+                <Grid.RenderTransform>
+                    <RotateTransform x:Name="Rotation" Angle="0"/>
+                </Grid.RenderTransform>
+
+
+                <!-- Needs Dramatic work here, #1 make the routed event -->
+                <Grid.Triggers>
+
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="Forever">
+                                <DoubleAnimation 
+                                    Storyboard.TargetName="Rotation"
+                                    Storyboard.TargetProperty="Angle"
+                                    From="0" To="360"
+                                    Duration="0:00:5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+
+                </Grid.Triggers>
+
+
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</UserControl>

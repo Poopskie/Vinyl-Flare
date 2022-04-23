@@ -19,6 +19,9 @@
     <Compile Update="MVVM\View\LibraryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\View\PlaySongView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\View\SuccessView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\LibraryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\PlaySongView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\SuccessView.xaml">

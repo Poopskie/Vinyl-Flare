@@ -25,14 +25,14 @@ namespace Vinyl_Flare.MVVM.Commands
         // IMPORTANT: Command will piece together all existing info in the viewmodel
         public override void Execute(object parameter)
         {
-            using (var db = new AlbumContext())
-            {
-                newID = db.Albums.Count() + 1;
-            }
+     //       using (var db = new AlbumContext())
+     //       {
+    //            newID = db.Albums.Count() + 1; // getting # of albums from database
+    //        } ALBUM ID WILL AUTOMATICALLY BE SET
 
             Album album = new Album()
             {
-                AlbumId = newID, // replace with db.album.count + 1
+      //          AlbumId = newID, // replace with db.album.count + 1
                 AlbumName = $"{_viewModel.AlbumName}",
                 Songs = _viewModel.SongArray,
                 AlbumCoverURL = _viewModel._albumCover

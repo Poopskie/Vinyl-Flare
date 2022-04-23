@@ -5,10 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Vinyl_Flare.MVVM.View" 
              xmlns:viewmodel="clr-namespace:Vinyl_Flare.MVVM.ViewModel" 
+             xmlns:Convertor="clr-namespace:Vinyl_Flare.Converters"
              d:DataContext="{d:DesignInstance Type=viewmodel:LibraryViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="900" d:DesignWidth="1380"
              Background ="GreenYellow">
+    <UserControl.Resources>
+        <Convertor:StringToImage x:Key="StringToImage"/>
+    </UserControl.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -29,24 +34,58 @@
             <TextBlock Text="{Binding albums[0].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
-            <Image Source="{Binding albums[0].AlbumCoverURL}"
-                   Height="150"/>
+
+            <Border Background="White" Height="265" Width="265" 
+                    CornerRadius="5"/>
+            
+            <Image Height="250" Width="250" Source="{Binding albums[0].AlbumCoverURL,
+                Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
+
+            <Button Content="Play Album" Height="50" Width="200"
+                    Margin="0 25" Style="{StaticResource FactoryButtonTheme}"
+                    Command="{Binding PlaySongCommand0}"/>
 
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2"
                     Orientation="Vertical">
-            <TextBlock Text="{Binding albums[6].AlbumName}"
+            <TextBlock Text="{Binding albums[8].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
-            <Image Height="250">
-                <Image.Source>
-                    <BitmapImage DecodePixelWidth="200" 
-                                 UriSource="{Binding albums[6].AlbumCoverURL}"
-                                 />
-                </Image.Source>
-                
-            </Image>
+
+            <Border Background="White" Height="265" Width="265" 
+                    CornerRadius="5"/>
+            
+            <Image Height="250" Width="250" Source="{Binding albums[8].AlbumCoverURL, 
+                Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="3"
+                    Orientation="Vertical">
+            <TextBlock Text="{Binding albums[2].AlbumName}"
+                       Height="100" FontFamily="Comic Sans MS"
+                       FontSize="30" HorizontalAlignment="Center"/>
+
+            <Border Background="White" Height="265" Width="265" 
+                    CornerRadius="5"/>
+            
+            <Image Height="250" Width="250" Source="{Binding albums[2].AlbumCoverURL, 
+                Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="4"
+                    Orientation="Vertical">
+            <TextBlock Text="{Binding albums[3].AlbumName}"
+                       Height="100" FontFamily="Comic Sans MS"
+                       FontSize="30" HorizontalAlignment="Center"/>
+
+            <Border Background="White" Height="265" Width="265" 
+                    CornerRadius="5"/>
+            
+            <Image Height="250" Width="250" Source="{Binding albums[3].AlbumCoverURL, 
+                Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
 
         </StackPanel>
 

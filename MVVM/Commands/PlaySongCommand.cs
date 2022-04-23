@@ -14,10 +14,10 @@ namespace Vinyl_Flare.MVVM.Commands
         // using this to move selected album to home to play
     {
         private readonly LibraryViewModel _viewModel; // current viewmodel information
-        private readonly ParameterNavigationService<Album, HomeViewModel> _navigationService;
+        private readonly ParameterNavigationService<Album, PlaySongViewModel> _navigationService;
         private readonly int _selected;
 
-        public PlaySongCommand(LibraryViewModel viewModel, ParameterNavigationService<Album, HomeViewModel> navigationService,
+        public PlaySongCommand(LibraryViewModel viewModel, ParameterNavigationService<Album, PlaySongViewModel> navigationService,
             int selected)
         {
             _viewModel = viewModel;
@@ -27,12 +27,10 @@ namespace Vinyl_Flare.MVVM.Commands
 
         public override void Execute(object parameter)
         {
-            // taking parameter from Libraryviewmodel (which queries)
+            // taking parameter from Libraryviewmodel (which has album<list> from db)
             Album album = _viewModel.albums[_selected];
             
-
-
-            // then navigate to success after validating other details
+            // Navigate the selected album to home
 
             // Navigate with ParameterNavigationService + takes in a Tparameter
             _navigationService.Navigate(album);

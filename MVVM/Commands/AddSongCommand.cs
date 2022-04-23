@@ -46,7 +46,7 @@ namespace Vinyl_Flare.MVVM.Commands
 
                 // using constructor instead
                 newSong = new Song();
-                newSong.SongId = _viewModel.SongArray.Count();
+           //     newSong.SongId = _viewModel.SongArray.Count() + 1;
                 newSong.SongName = dialog.SafeFileName;
                 newSong.URL = dialog.FileName;
 

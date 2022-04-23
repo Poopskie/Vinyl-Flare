@@ -34,6 +34,16 @@ namespace Vinyl_Flare.MVVM.Commands
             {
                 db.Add(_album); // Adding the Album using EFcore instead of SQlite
                 db.SaveChanges();
+                var foundalbum = db.Albums.OrderBy(a => a.AlbumId).Last(); // newest addition to db
+
+                int size = _album.Songs.Count();
+
+                for (int i = 0; i < size; i++) // add each song in the list to the db
+                {
+                    foundalbum.Songs.Add(_album.Songs[i]);
+                }
+
+                db.SaveChanges();
 
 
             }

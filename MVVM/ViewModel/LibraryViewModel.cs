@@ -24,22 +24,21 @@ namespace Vinyl_Flare.MVVM.ViewModel
         public List<Album> albums { get; } // need the albums here to display them
         public int selected; // changes as clicked
 
-        public ICommand PlaySongCommand0;
+        public ICommand PlaySongCommand0 { get; }
 
         public Album album1 { get; set; }
+
 
         public LibraryViewModel(NavigationStore navigationStore, List<Album> albumsIn = null)
         {
 
-            ParameterNavigationService<Album, HomeViewModel> navigationService = new ParameterNavigationService<Album, HomeViewModel>(
-                navigationStore, (parameter) => new HomeViewModel(parameter));
+            ParameterNavigationService<Album, PlaySongViewModel> navigationService = new ParameterNavigationService<Album, PlaySongViewModel>(
+                navigationStore, (parameter) => new PlaySongViewModel(parameter));
 
             albums = albumsIn;
 
-            PlaySongCommand0 = new PlaySongCommand(this, navigationService, 0);
+            PlaySongCommand0 = new PlaySongCommand(this, navigationService, 8);
 
-
-            album1 = albums[0];
 
 
 

@@ -32,6 +32,10 @@
             <DataTemplate DataType="{x:Type viewModel:SuccessViewModel}">
                 <view:SuccessView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:PlaySongViewModel}">
+                <view:PlaySongView/>
+            </DataTemplate>
 <!--
             <ControlTemplate TargetType="{x:Type spinning:SpinningVinyl}">
                 

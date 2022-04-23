@@ -33,7 +33,7 @@ namespace Vinyl_Flare.Migrations
 
                     b.HasKey("AlbumId");
 
-                    b.ToTable("Albums");
+                    b.ToTable("Albums", (string)null);
                 });
 
             modelBuilder.Entity("Vinyl_Flare.Song", b =>
@@ -57,7 +57,7 @@ namespace Vinyl_Flare.Migrations
 
                     b.HasIndex("AlbumId");
 
-                    b.ToTable("Song");
+                    b.ToTable("Song", (string)null);
                 });
 
             modelBuilder.Entity("Vinyl_Flare.Song", b =>

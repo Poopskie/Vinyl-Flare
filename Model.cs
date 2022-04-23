@@ -39,7 +39,7 @@ namespace Vinyl_Flare
 
     public class Song
     {
-        public int SongId { get; set; } // nullable to avoid errors
+        public int SongId { get; set; } // no need to set, will automatically be set
         public string SongName { get; set; }
         public string URL { get; set; } // Path to song
 
