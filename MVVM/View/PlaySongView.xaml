@@ -19,41 +19,48 @@
 
         <Border Height="620" Width="620" Background="White" CornerRadius="400"
                 Margin="0 0 0 200" HorizontalAlignment="Center">
+            <StackPanel>
+                
+                <Grid HorizontalAlignment="Stretch" RenderTransformOrigin="0.5 0.5" 
+                      VerticalAlignment="Stretch">
 
-            <Grid HorizontalAlignment="Stretch" RenderTransformOrigin="0.5 0.5" 
-                  VerticalAlignment="Stretch">
+                    <Image Source="/Images/vinyl.png" Margin="10"/>
 
-                <Image Source="/Images/vinyl.png" Margin="10"/>
-
-                <Image Source="{Binding AlbumImage, Converter={StaticResource StringToImage}}" 
-                       Margin="205"/>
-
-
-                <Grid.RenderTransform>
-                    <RotateTransform x:Name="Rotation" Angle="0"/>
-                </Grid.RenderTransform>
+                    <Image Source="{Binding AlbumImage, Converter={StaticResource StringToImage}}" 
+                           Margin="205"/>
 
 
-                <!-- Needs Dramatic work here, #1 make the routed event -->
-                <Grid.Triggers>
-
-                    <EventTrigger RoutedEvent="MouseEnter">
-                        <BeginStoryboard>
-                            <Storyboard RepeatBehavior="Forever">
-                                <DoubleAnimation 
-                                    Storyboard.TargetName="Rotation"
-                                    Storyboard.TargetProperty="Angle"
-                                    From="0" To="360"
-                                    Duration="0:00:5"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-
-                </Grid.Triggers>
+                    <Grid.RenderTransform>
+                        <RotateTransform x:Name="Rotation" Angle="0"/>
+                    </Grid.RenderTransform>
 
 
+                    <!-- Needs Dramatic work here, #1 make the routed event -->
+                    <Grid.Triggers>
 
-            </Grid>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard RepeatBehavior="Forever">
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="Rotation"
+                                        Storyboard.TargetProperty="Angle"
+                                        From="0" To="360"
+                                        Duration="0:00:5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                    </Grid.Triggers>
+
+
+
+                </Grid>
+
+                <Label Content="{Binding lblStatus}"/>
+
+
+
+            </StackPanel>
 
         </Border>
 

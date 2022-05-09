@@ -49,14 +49,14 @@
 
         <StackPanel Grid.Row="1" Grid.Column="2"
                     Orientation="Vertical">
-            <TextBlock Text="{Binding albums[8].AlbumName}"
+            <TextBlock Text="{Binding albums[9].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
 
             <Border Background="White" Height="265" Width="265" 
                     CornerRadius="5"/>
             
-            <Image Height="250" Width="250" Source="{Binding albums[8].AlbumCoverURL, 
+            <Image Height="250" Width="250" Source="{Binding albums[9].AlbumCoverURL, 
                 Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
 
         </StackPanel>

@@ -11,6 +11,7 @@ namespace Vinyl_Flare
     public class AlbumContext : DbContext
     {
         public DbSet<Album> Albums { get; set; }
+        public DbSet<Song> Songs { get; set; } // need this for songs to save
         public string DbPath { get; set; }
 
         public AlbumContext() // Constructor for path to db
@@ -29,7 +30,7 @@ namespace Vinyl_Flare
         public int AlbumId { get; set; }
         public string AlbumName { get; set; }
 
-        public List<Song> Songs { get; set; } = new();
+        public List<Song> Songs { get; set; } // can us = new(); to be nullable
         // making sure to declare Songs list
 
         public string AlbumCoverURL { get; set; }
