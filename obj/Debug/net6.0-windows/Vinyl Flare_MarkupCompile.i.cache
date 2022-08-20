@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\App.xaml
 12806391568
 
-501896466722
+55847844464
 212-683784441
 MainWindow.xaml;MVVM\Components\RemoveSongMenus.xaml;MVVM\View\FactoryView.xaml;MVVM\View\HomeView.xaml;MVVM\View\LibraryView.xaml;MVVM\View\PlaySongView.xaml;MVVM\View\SuccessView.xaml;Themes\AlbumProgressBar.xaml;Themes\FactoryButtonTheme.xaml;Themes\MenuButtonTheme.xaml;Themes\SongNameListTheme.xaml;Themes\TextBoxTheme.xaml;
 
-True
+False
 

@@ -36,7 +36,7 @@ namespace Vinyl_Flare.MVVM.Commands
                 
                 //for (int i = 0; i < size; i++) // add each song in the list to the db
                 //{
-                //    db.Add(_album.Songs[i]);
+                //    db.Songs.Add(_album.Songs[i]);
                 //}
                 
                 db.Albums.Add(_album); // Adding the Album using EFcore instead of SQlite

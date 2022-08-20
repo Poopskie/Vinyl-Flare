@@ -16,18 +16,18 @@
     
     
     <Grid>
+        <StackPanel>
+            <Border Height="620" Width="620" Background="White" CornerRadius="1000"
+                    Margin="0 90 0 50" HorizontalAlignment="Center">
 
-        <Border Height="620" Width="620" Background="White" CornerRadius="400"
-                Margin="0 0 0 200" HorizontalAlignment="Center">
-            <StackPanel>
-                
+
                 <Grid HorizontalAlignment="Stretch" RenderTransformOrigin="0.5 0.5" 
-                      VerticalAlignment="Stretch">
+                          VerticalAlignment="Stretch">
 
                     <Image Source="/Images/vinyl.png" Margin="10"/>
 
                     <Image Source="{Binding AlbumImage, Converter={StaticResource StringToImage}}" 
-                           Margin="205"/>
+                               Margin="205"/>
 
 
                     <Grid.RenderTransform>
@@ -42,27 +42,38 @@
                             <BeginStoryboard>
                                 <Storyboard RepeatBehavior="Forever">
                                     <DoubleAnimation 
-                                        Storyboard.TargetName="Rotation"
-                                        Storyboard.TargetProperty="Angle"
-                                        From="0" To="360"
-                                        Duration="0:00:5"/>
+                                            Storyboard.TargetName="Rotation"
+                                            Storyboard.TargetProperty="Angle"
+                                            From="0" To="360"
+                                            Duration="0:00:10"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
 
                     </Grid.Triggers>
 
-
-
                 </Grid>
 
-                <Label Content="{Binding lblStatus}"/>
+            </Border>
+            
+            
+            <Label Content="{Binding lblStatus}"  Margin="0 25" Width="400"
+                       Height="50" HorizontalContentAlignment="Center"
+                   FontFamily="Comic Sans MS" FontSize="16"/>
 
+                <StackPanel Orientation="Horizontal" Height="50" Width="500"
+                            >
+                    <RadioButton Style="{StaticResource MenuButtonTheme}"
+                            Click="Pause_Button" HorizontalAlignment="Center"
+                            FontSize="24" FontFamily="Comic Sans MS"
+                            Content="Pause" Width="100" Margin="100 0 50 0"/>
+                    
+                    <RadioButton Style="{StaticResource MenuButtonTheme}"
+                            Click="Play_Button" HorizontalAlignment="Center"
+                            FontSize="24" FontFamily="Comic Sans MS"
+                            Content="Play" Width="100" Margin="50 0 100 0"/>
 
-
-            </StackPanel>
-
-        </Border>
-
+                </StackPanel>
+         </StackPanel>
     </Grid>
 </UserControl>

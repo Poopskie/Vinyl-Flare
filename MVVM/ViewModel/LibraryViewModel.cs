@@ -37,7 +37,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
             albums = albumsIn;
 
-            PlaySongCommand0 = new PlaySongCommand(this, navigationService, 8);
+            PlaySongCommand0 = new PlaySongCommand(this, navigationService, 2);
 
 
 

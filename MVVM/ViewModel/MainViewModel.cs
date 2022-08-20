@@ -27,6 +27,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
         public ICommand NavigateFactoryCommand => SideBar.NavigateFactoryCommand;
 
         public readonly List<Album> albums; // NEED TO ADD A ONPROPERTYCHANGED
+        public readonly List<Song> songs; // NEED TO ADD A ONPROPERTYCHANGED
 
         private readonly ParameterNavigationService<List<Album>, LibraryViewModel> _navigationService; // to library
 
@@ -35,6 +36,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
             using (var db = new AlbumContext()) // using EF core to simplify syntax
             { // lambda b function, returns the albumid attribute of albums
                 albums = db.Albums.ToList(); // returns list of all the albums
+                songs = db.Songs.ToList(); // returns list of all the albums
             }
 
             ParameterNavigationService<List<Album>, LibraryViewModel> navigationService = new ParameterNavigationService<List<Album>, LibraryViewModel>(

@@ -24,5 +24,14 @@ namespace Vinyl_Flare.MVVM.View
         {
             InitializeComponent();
         }
+
+        private void Pause_Button(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Play_Button(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

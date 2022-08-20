@@ -12,9 +12,17 @@ namespace Vinyl_Flare.MVVM.ViewModel
     public class PlaySongViewModel : ViewModelBase
     {
         private MediaPlayer mediaPlayer = new(); // initializing mp3 player
-        
-        public string lblStatus { get; set; } // property for the label to be binded
 
+        private string _lblStatus; // property for the label to be binded
+        public string lblStatus 
+        {
+            get => _lblStatus;
+            set 
+            { 
+                _lblStatus = value; 
+                OnlblStatusPropertyChanged();
+            } 
+        }
 
         private readonly Album _album = new();
 
@@ -24,9 +32,9 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         public PlaySongViewModel(Album album) // default parameter for start
         {
-            _album = album;
+            _album = album; // SHIT WORKS NOW!!!!!! - AUGUST 19TH 2022
 
-            mediaPlayer.Open(new Uri(_album.Songs[0].URL)); // taking url from first song
+            mediaPlayer.Open(new Uri(_album.Songs[4].URL)); // taking url from first song
             mediaPlayer.Play();
 
             DispatcherTimer timer = new(); // initializing timer for song
@@ -35,7 +43,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
             timer.Start();
         }
 
-
+        
 
         void timer_Tick(object sender, EventArgs e) // function for changing timer display
         {
@@ -44,6 +52,12 @@ namespace Vinyl_Flare.MVVM.ViewModel
             else
                 lblStatus = "No file selected...";
         }
+
+        private void OnlblStatusPropertyChanged()
+        {
+            OnPropertyChanged(nameof(lblStatus));
+        }
+
 
     }
 }
