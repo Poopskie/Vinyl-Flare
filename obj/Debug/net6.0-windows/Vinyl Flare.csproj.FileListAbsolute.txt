@@ -148,3 +148,4 @@ C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Themes\So
 C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\obj\Debug\net6.0-windows\Themes\SongNameListTheme.baml
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\PlaySongView.g.cs
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\PlaySongView.baml
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Themes\VolumeSliderTheme.baml

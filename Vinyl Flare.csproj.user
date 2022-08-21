@@ -63,5 +63,8 @@
     <Page Update="Themes\TextBoxTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Themes\VolumeSliderTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

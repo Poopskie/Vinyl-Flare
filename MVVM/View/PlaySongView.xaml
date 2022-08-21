@@ -13,8 +13,8 @@
     <UserControl.Resources>
         <Convertor:StringToImage x:Key="StringToImage"/>
     </UserControl.Resources>
-    
-    
+
+
     <Grid>
         <StackPanel>
             <Border Height="620" Width="620" Background="White" CornerRadius="1000"
@@ -61,19 +61,24 @@
                        Height="50" HorizontalContentAlignment="Center"
                    FontFamily="Comic Sans MS" FontSize="16"/>
 
-                <StackPanel Orientation="Horizontal" Height="50" Width="500"
+                <StackPanel Orientation="Horizontal" Height="50" Width="1000"
                             >
                     <RadioButton Style="{StaticResource MenuButtonTheme}"
-                            Click="Pause_Button" HorizontalAlignment="Center"
+                            Command="{Binding Pause}" HorizontalAlignment="Center"
                             FontSize="24" FontFamily="Comic Sans MS"
-                            Content="Pause" Width="100" Margin="100 0 50 0"/>
+                            Content="Pause" Width="100" Margin="350 0 50 0"/>
                     
                     <RadioButton Style="{StaticResource MenuButtonTheme}"
-                            Click="Play_Button" HorizontalAlignment="Center"
+                            Command="{Binding Play}" HorizontalAlignment="Center"
                             FontSize="24" FontFamily="Comic Sans MS"
                             Content="Play" Width="100" Margin="50 0 100 0"/>
 
-                </StackPanel>
+                    <Slider Height="50" Width="150" Orientation="Horizontal"
+                            >
+
+                    </Slider>
+
+            </StackPanel>
          </StackPanel>
     </Grid>
 </UserControl>
