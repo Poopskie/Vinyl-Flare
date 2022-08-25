@@ -1,5 +1,6 @@
 ﻿using NavigationMVVM.ViewModels;
 using System;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
@@ -29,7 +30,19 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         public ICommand Pause { get; }
         public ICommand Play { get; }
-        //     public ICommand Pause { get; }
+        public ICommand Volume { get; }
+        // double for slider
+        private double _volumeBinder = 0;
+        public double volumeBinder
+        {
+            get => _volumeBinder;
+            set
+            {
+                _volumeBinder = value;
+                volumeChanged();
+            }
+        }
+            // using double to bind to slider
 
         private int SongPlaying;
 
@@ -44,18 +57,20 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
             Pause = new MediaControl(mediaPlayer, "pause"); // Initializing media control commands
             Play = new MediaControl(mediaPlayer, "play");
+            Volume = new MediaControl(mediaPlayer, "volume");
 
             DispatcherTimer timer = new(); // initializing timer for song
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
             timer.Start();
         }
-
+        private void volumeChanged()
+        {
+            mediaPlayer.Volume = volumeBinder;
+        }
         
-       
-        
 
-        void timer_Tick(object sender, EventArgs e) // function for changing timer display
+        private void timer_Tick(object sender, EventArgs e) // function for changing timer display
         {
             if (mediaPlayer.Source != null)
                 lblStatus = String.Format("{0} / {1}", mediaPlayer.Position.ToString(@"mm\:ss"), mediaPlayer.NaturalDuration.TimeSpan.ToString(@"mm\:ss"));
@@ -74,6 +89,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
             }
 
         }
+
 
         private void OnlblStatusPropertyChanged()
         {

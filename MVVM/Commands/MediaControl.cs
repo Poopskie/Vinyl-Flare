@@ -29,8 +29,7 @@ namespace Vinyl_Flare.MVVM.Commands
             } else if (Command == "play")
             {
                 MediaPlayer.Play();
-            }
-        
+            } 
         }
 
 
