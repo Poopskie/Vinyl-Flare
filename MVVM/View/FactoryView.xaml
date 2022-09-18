@@ -107,8 +107,11 @@
                   ItemsSource="{Binding SongArray}"
                   Grid.Column="1" Grid.RowSpan="3" Grid.Row="2"
                   BorderBrush="Black"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  >
+
             <ListView.View>
+
                 <GridView>
                     <!-- This takes a second to refresh or maybe doesn't... -->
                     <GridView.ColumnHeaderContainerStyle>
@@ -119,24 +122,21 @@
                                     <ControlTemplate 
                                         TargetType="{x:Type GridViewColumnHeader}">
                                         <Border BorderBrush="Black" BorderThickness="0 0 0 1"
-                                                Padding="0 5">
+                                                Padding="0 5" Margin="{Binding title}">
                                             <TextBlock Text="{TemplateBinding Content}"/>
+
                                         </Border>
-
                                     </ControlTemplate>
-
-
                                 </Setter.Value>
                             </Setter>
                         </Style>
-
 
                     </GridView.ColumnHeaderContainerStyle>
                     <!-- Only updates if I maximize window for some reason -->
                     <GridViewColumn Header="Added Songs" Width="360"
                                     DisplayMemberBinding="{Binding SongName}"/>
-                </GridView>
 
+                </GridView>
 
             </ListView.View>
 

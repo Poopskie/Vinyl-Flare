@@ -18,6 +18,9 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
         public ICommand AddImageCommand { get; }
         public ICommand RemoveSongCommand { get; }
 
+        // little number to update
+        public int title { get; set; }
+
 
         // IMPORTANT: name textboxes, refer to them here and add info into a variable
 
@@ -43,6 +46,7 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
                 OnSongArrayPropertyChanged();
             }
         }
+        private int num;
 
 
         public FactoryViewModel(NavigationStore navigationStore)
@@ -68,6 +72,7 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
 
             // make sure SongArray isn't null
             SongArray = new();
+            title = 0;
 
 
         }
@@ -78,7 +83,9 @@ namespace Vinyl_Flare.MVVM.ViewModel // this was a good attempt, but in the end 
         }
         private void OnSongArrayPropertyChanged()
         {
-            OnPropertyChanged(nameof(SongArray));
+            OnPropertyChanged(nameof(SongArray)); // THIS IS NOT THE PROBLEM, ITS THE LISTVIEW
+            title += 1;
+            OnPropertyChanged(nameof(title));
         }
 
 

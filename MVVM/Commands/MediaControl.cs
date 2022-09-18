@@ -29,7 +29,11 @@ namespace Vinyl_Flare.MVVM.Commands
             } else if (Command == "play")
             {
                 MediaPlayer.Play();
-            } 
+            } else if (Command == "skip")
+            {
+                TimeSpan ts = new TimeSpan(0, 0, 0, 0, Convert.ToInt32(MediaPlayer.NaturalDuration.TimeSpan.TotalMilliseconds));
+                MediaPlayer.Position = ts;
+            }
         }
 
 

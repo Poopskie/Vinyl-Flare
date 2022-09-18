@@ -18,7 +18,7 @@
     <Grid>
         <StackPanel>
             <Border Height="620" Width="620" Background="White" CornerRadius="1000"
-                    Margin="0 90 0 50" HorizontalAlignment="Center">
+                    Margin="0 50 0 100" HorizontalAlignment="Center">
 
 
                 <Grid HorizontalAlignment="Stretch" RenderTransformOrigin="0.5 0.5" 
@@ -57,21 +57,30 @@
             </Border>
             
             
-            <Label Content="{Binding lblStatus}"  Margin="0 25" Width="400"
+            <Label Content="{Binding lblStatus}"  Margin="0 0 0 0" Width="400"
                        Height="50" HorizontalContentAlignment="Center"
                    FontFamily="Comic Sans MS" FontSize="16"/>
 
-                <StackPanel Orientation="Horizontal" Height="50" Width="1000"
+            <TextBlock FontFamily="Comic Sans MS" FontSize="16"
+                       Height="50" HorizontalAlignment="Center"
+                       Margin="0 25 0 50" Text="{Binding SongNow}"/>
+
+            <StackPanel Orientation="Horizontal" Height="50" Width="1000"
                             >
+                    <RadioButton Style="{StaticResource MenuButtonTheme}"
+                            Command="{Binding Skip}" HorizontalAlignment="Center"
+                            FontSize="24" FontFamily="Comic Sans MS"
+                            Content="Skip" Width="100" Margin="225 0 0 0"/>
+                
                     <RadioButton Style="{StaticResource MenuButtonTheme}"
                             Command="{Binding Pause}" HorizontalAlignment="Center"
                             FontSize="24" FontFamily="Comic Sans MS"
-                            Content="Pause" Width="100" Margin="350 0 50 0"/>
+                            Content="Pause" Width="100" Margin="50 0 25 0"/>
                     
                     <RadioButton Style="{StaticResource MenuButtonTheme}"
                             Command="{Binding Play}" HorizontalAlignment="Center"
                             FontSize="24" FontFamily="Comic Sans MS"
-                            Content="Play" Width="100" Margin="50 0 100 0"/>
+                            Content="Play" Width="100" Margin="25 0 50 0"/>
 
                     <Slider Height="50" Width="150" Orientation="Horizontal"
                             TickFrequency="0.05" IsSnapToTickEnabled="True" Maximum="1" 

@@ -30,7 +30,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         public ICommand Pause { get; }
         public ICommand Play { get; }
-        public ICommand Volume { get; }
+        public ICommand Skip { get; }
         // double for slider
         private double _volumeBinder = 0;
         public double volumeBinder
@@ -42,9 +42,27 @@ namespace Vinyl_Flare.MVVM.ViewModel
                 volumeChanged();
             }
         }
-            // using double to bind to slider
+        // using double to bind to slider
+        private string _songNow;
+        public string SongNow 
+        { 
+            get => _songNow; 
+            set 
+            { 
+                _songNow = value; 
+                OnSongNowPropertyChanged(); 
+            } 
+        } // prop for song name
 
-        private int SongPlaying;
+        private int _songPlaying;
+        public int SongPlaying
+        {
+            get => _songPlaying;
+            set
+            {
+                _songPlaying = value;
+            }
+        }
 
 
         public PlaySongViewModel(Album album) // default parameter for start
@@ -57,7 +75,8 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
             Pause = new MediaControl(mediaPlayer, "pause"); // Initializing media control commands
             Play = new MediaControl(mediaPlayer, "play");
-            Volume = new MediaControl(mediaPlayer, "volume");
+            Skip = new MediaControl(mediaPlayer, "skip");
+            SongNow = _album.Songs[SongPlaying].SongName; // initializing songname
 
             DispatcherTimer timer = new(); // initializing timer for song
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -85,6 +104,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
                     SongPlaying += 1;
                     mediaPlayer.Open(new Uri(_album.Songs[SongPlaying].URL));
                     mediaPlayer.Play();
+                    SongNow = _album.Songs[SongPlaying].SongName; // updating prop with song name
                 }
             }
 
@@ -94,6 +114,11 @@ namespace Vinyl_Flare.MVVM.ViewModel
         private void OnlblStatusPropertyChanged()
         {
             OnPropertyChanged(nameof(lblStatus));
+        }
+
+        private void OnSongNowPropertyChanged()
+        {
+            OnPropertyChanged(nameof(SongNow));
         }
 
 
