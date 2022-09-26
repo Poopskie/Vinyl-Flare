@@ -2,9 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Navigation;
 using Vinyl_Flare.MVVM.Commands;
 using Vinyl_Flare.MVVM.Service;
 using Vinyl_Flare.MVVM.Store;
@@ -24,28 +27,120 @@ namespace Vinyl_Flare.MVVM.ViewModel
         public List<Album> albums { get; } // need the albums here to display them
         public int selected; // changes as clicked
 
-        public ICommand PlaySongCommand0 { get; }
+        private List<ICommand> _playSongCommands = new List<ICommand>();
+        public List<ICommand> PlaySongCommands { get => _playSongCommands; }
 
-        public Album album1 { get; set; }
+
+        public int pageValue = 0;
+
+        // nasty repetitive code cuz i suck at coding
+
+        private List<Album> _albumDisplay = new List<Album>();
+        public List<Album> AlbumDisplay 
+        { 
+            get => _albumDisplay;
+            set
+            {
+                _albumDisplay = value;
+            }
+        }
+
+        public ICommand NextPageICommand { get; set; }
+        public ICommand LastPageICommand { get; set; }
+        private ParameterNavigationService<Album, PlaySongViewModel> navigationService;
+        private ICommand TempPlaySongCommand;
 
 
         public LibraryViewModel(NavigationStore navigationStore, List<Album> albumsIn = null)
         {
 
-            ParameterNavigationService<Album, PlaySongViewModel> navigationService = new ParameterNavigationService<Album, PlaySongViewModel>(
+            navigationService = new ParameterNavigationService<Album, PlaySongViewModel>(
                 navigationStore, (parameter) => new PlaySongViewModel(parameter));
 
             albums = albumsIn;
 
-            PlaySongCommand0 = new PlaySongCommand(this, navigationService, 2);
+            NextPageICommand = new LibraryPageCommand(this, pageValue, "next");
+            LastPageICommand = new LibraryPageCommand(this, pageValue, "last");
 
+            for (int i = pageValue; i < pageValue+4; i++)
+                {
+                    try
+                    {
+                        _albumDisplay.Add(albums[i]); // add first 4 albums
+                        TempPlaySongCommand = new PlaySongCommand(this, navigationService, i);
+                         _playSongCommands.Add(TempPlaySongCommand); // copying above
 
-
-
-
+                    } catch (ArgumentOutOfRangeException)
+                       {
+                         break;
+                       } // catch index error
+                }
 
         }
 
+
+
+        public void NextPageCommand()
+        {
+            pageValue += 4;
+            // swapping up
+            _albumDisplay.Clear();
+            _playSongCommands.Clear();
+            for (int i = pageValue; i < pageValue + 4; i++)
+            {
+                try
+                {
+                    _albumDisplay.Add(albums[i]); // add first 4 albums
+                    TempPlaySongCommand = new PlaySongCommand(this, navigationService, i);
+                    _playSongCommands.Add(TempPlaySongCommand); // copying above
+
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    break;
+                } // catch index error
+            }
+            OnAlbumDisplayPropertyChanged();
+            OnPlaySongCommandPropertyChanged();
+
+        }
+
+        public void LastPageCommand()
+        {
+            if (pageValue > 0)
+            {
+                pageValue -= 4;
+            }
+            
+            // swapping up
+            _albumDisplay.Clear();
+            _playSongCommands.Clear();
+            for (int i = pageValue; i < pageValue + 4; i++)
+            {
+                try
+                {
+                    _albumDisplay.Add(albums[i]); // add first 4 albums
+                    TempPlaySongCommand = new PlaySongCommand(this, navigationService, i);
+                    _playSongCommands.Add(TempPlaySongCommand); // copying above
+
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    break;
+                } // catch index error
+            }
+            OnAlbumDisplayPropertyChanged();
+            OnPlaySongCommandPropertyChanged();
+        }
+
+        private void OnAlbumDisplayPropertyChanged()
+        {
+            OnPropertyChanged(nameof(AlbumDisplay));
+        }
+        private void OnPlaySongCommandPropertyChanged()
+        {
+            OnPropertyChanged(nameof(PlaySongCommands));
+        }
 
 
     }

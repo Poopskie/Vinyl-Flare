@@ -8,7 +8,7 @@
              xmlns:Convertor="clr-namespace:Vinyl_Flare.Converters"
              d:DataContext="{d:DesignInstance Type=viewmodel:LibraryViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="900" d:DesignWidth="1380"
+             d:DesignHeight="1080" d:DesignWidth="1920"
              Background ="GreenYellow">
     <UserControl.Resources>
         <Convertor:StringToImage x:Key="StringToImage"/>
@@ -31,62 +31,92 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1"
                     Orientation="Vertical">
-            <TextBlock Text="{Binding albums[2].AlbumName}"
+            <TextBlock Text="{Binding AlbumDisplay[0].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
 
             <Border Background="White" Height="265" Width="265" 
                     CornerRadius="5"/>
             
-            <Image Height="250" Width="250" Source="{Binding albums[2].AlbumCoverURL,
+            <Image Height="250" Width="250" Source="{Binding AlbumDisplay[0].AlbumCoverURL,
                 Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
 
             <Button Content="Play Album" Height="50" Width="200"
                     Margin="0 25" Style="{StaticResource FactoryButtonTheme}"
-                    Command="{Binding PlaySongCommand0}"/>
+                    Command="{Binding PlaySongCommands[0]}"/>
 
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2"
                     Orientation="Vertical">
-            <TextBlock Text="{Binding albums[1].AlbumName}"
+            <TextBlock Text="{Binding AlbumDisplay[1].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
 
             <Border Background="White" Height="265" Width="265" 
                     CornerRadius="5"/>
-            
-            <Image Height="250" Width="250" Source="{Binding albums[1].AlbumCoverURL, 
+
+            <Image Height="250" Width="250" Source="{Binding AlbumDisplay[1].AlbumCoverURL, 
                 Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
+
+            <Button Content="Play Album" Height="50" Width="200"
+                    Margin="0 25" Style="{StaticResource FactoryButtonTheme}"
+                    Command="{Binding PlaySongCommands[1]}"/>
 
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="3"
                     Orientation="Vertical">
-            <TextBlock Text="{Binding albums[0].AlbumName}"
+            <TextBlock Text="{Binding AlbumDisplay[2].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
 
             <Border Background="White" Height="265" Width="265" 
                     CornerRadius="5"/>
-            
-            <Image Height="250" Width="250" Source="{Binding albums[0].AlbumCoverURL, 
+
+            <Image Height="250" Width="250" Source="{Binding AlbumDisplay[2].AlbumCoverURL, 
                 Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
+
+            <Button Content="Play Album" Height="50" Width="200"
+                    Margin="0 25" Style="{StaticResource FactoryButtonTheme}"
+                    Command="{Binding PlaySongCommands[2]}"/>
 
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="4"
                     Orientation="Vertical">
-            <TextBlock Text="{Binding albums[3].AlbumName}"
+            <TextBlock Text="{Binding AlbumDisplay[3].AlbumName}"
                        Height="100" FontFamily="Comic Sans MS"
                        FontSize="30" HorizontalAlignment="Center"/>
 
             <Border Background="White" Height="265" Width="265" 
                     CornerRadius="5"/>
-            
-            <Image Height="250" Width="250" Source="{Binding albums[3].AlbumCoverURL, 
+
+            <Image Height="250" Width="250" Source="{Binding AlbumDisplay[3].AlbumCoverURL, 
                 Converter={StaticResource StringToImage}}" Margin="0 -265 0 0"/>
 
+            <Button Content="Play Album" Height="50" Width="200"
+                    Margin="0 25" Style="{StaticResource FactoryButtonTheme}"
+                    Command="{Binding PlaySongCommands[3]}"/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="4">
+            
+            <Button Content="Next Page"
+                    FontFamily="Comic Sans MS" FontSize="16"
+                    Style="{StaticResource FactoryButtonTheme}"
+                    Command="{Binding NextPageICommand}"
+                    Height="50" Width="100" VerticalAlignment="Top"
+                    Margin="100 0 0 0"/>
+            <Button Content="Last Page"
+                    FontFamily="Comic Sans MS" FontSize="16"
+                    Style="{StaticResource FactoryButtonTheme}"
+                    Command="{Binding LastPageICommand}"
+                    Height="50" Width="100" VerticalAlignment="Top"
+                    Margin="100 50 0 0"/>
+            
+            
         </StackPanel>
 
 
