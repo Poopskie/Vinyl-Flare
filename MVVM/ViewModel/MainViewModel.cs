@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using Vinyl_Flare.Core;
 using Vinyl_Flare.MVVM.Commands;
@@ -31,6 +32,17 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         private readonly ParameterNavigationService<List<Album>, LibraryViewModel> _navigationService; // to library
 
+        // Milim Nava Button, hide everything for playsongview
+        private Visibility _milim = Visibility.Hidden;
+        public Visibility Milim
+        {
+            get => _milim;
+            set
+            {
+                _milim = value;
+            }
+        }
+
         public MainViewModel(NavigationStore navigationStore, SideBarViewModel sideBarViewModel)
         {
             using (var db = new AlbumContext()) // using EF core to simplify syntax
@@ -50,7 +62,14 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
             // Once invoked, method added will be triggered
+            _navigationStore.PlayingSongsNow += PlayingSongsNow; // Don't need this, can relocate to here
 
+        }
+
+        private void PlayingSongsNow()
+        {
+            Milim = Visibility.Visible;
+            OnPropertyChanged(nameof(Milim));
         }
 
         private void OnCurrentViewModelChanged()

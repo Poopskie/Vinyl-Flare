@@ -32,7 +32,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
         public ICommand Play { get; }
         public ICommand Skip { get; }
         // double for slider
-        private double _volumeBinder = 0;
+        private double _volumeBinder = 0.5;
         public double volumeBinder
         {
             get => _volumeBinder;

@@ -51,5 +51,20 @@ namespace Vinyl_Flare
             SideMenu.Visibility = Visibility.Visible;
             btnFullScreen.Visibility = Visibility.Visible;
         }
+
+        private void OnTargetUpdated(object sender, DataTransferEventArgs e)
+        { // When the ViewModel changes
+
+            // if current view model == playsongviewmodel then hide everything & display new
+            if (milim.Visibility == Visibility.Visible)
+            {
+                HideMenus.Visibility = Visibility.Hidden;
+                SideMenu.Visibility = Visibility.Hidden;
+                btnFullScreen.Visibility = Visibility.Hidden;
+                window.WindowStyle = WindowStyle.None;
+
+            }
+
+        }
     }
 }

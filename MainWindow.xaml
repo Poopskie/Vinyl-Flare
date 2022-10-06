@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Vinyl_Flare"
         xmlns:stores="clr-namespace:Vinyl_Flare.MVVM.Store"
         xmlns:viewModel="clr-namespace:Vinyl_Flare.MVVM.ViewModel" 
+        d:DataContext="{d:DesignInstance Type=viewModel:MainViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920"
         x:Name="window"
@@ -14,7 +15,7 @@
         WindowStyle="ThreeDBorderWindow" Icon="/Images/milimnava.jpg">
     <!--AllowsTransparency="True"-->
 
-    
+
 
     <Border Background="LightGray" CornerRadius="20">
 
@@ -31,14 +32,26 @@
             </Grid.RowDefinitions>
 
             <ContentControl Margin="10" Grid.RowSpan="2" Grid.ColumnSpan ="2" 
-                            Content="{Binding CurrentViewModel}">
+                            Content="{Binding CurrentViewModel}"
+                            >
 
             </ContentControl>
 
 
-                <!-- Button to hide/unhide buttons -->
+            <!-- Button to hide/unhide buttons -->
 
-            <StackPanel Margin="0,0,0,0" HorizontalAlignment="Stretch">
+            <StackPanel Margin="0,0,0,0" HorizontalAlignment="Stretch"
+                        >
+
+                <Button Margin="10 10 10 -150" Height="100" BorderThickness="0"
+                        Visibility="{Binding Milim}" Background="Transparent"
+                        IsHitTestVisible="False">
+
+                    <Image Source="Images/milimnava.jpg" HorizontalAlignment="Center" 
+                           Visibility="{Binding Milim, NotifyOnTargetUpdated=True}"
+                           x:Name="milim"
+                           TargetUpdated="OnTargetUpdated" Height="150"/>
+                </Button>
 
                 <!-- The button that hides the other menu options -->
                 <ToggleButton HorizontalAlignment="Center" Checked="HideMenus_Checked"
@@ -46,7 +59,8 @@
                         x:Name="HideMenus" Unchecked="HideMenus_Unchecked">
                     <Image Source="Images/rikakawai.jpg" HorizontalAlignment="Center"
                            Margin="-1"/>
-                    <ToggleButton.Style> <!-- Make button bigger while hovering -->
+                    <ToggleButton.Style>
+                        <!-- Make button bigger while hovering -->
                         <Style TargetType="{x:Type ToggleButton}">
                             <Style.Setters>
                                 <Setter Property="Margin" Value="10"/>
@@ -64,12 +78,13 @@
                                                 <ContentPresenter VerticalAlignment="Stretch"
                                                                   HorizontalAlignment="Stretch"/>
                                             </Border>
-                                            
+
                                         </ControlTemplate>
                                     </Setter.Value>
                                 </Setter>
                             </Style.Setters>
-                            <Style.Triggers> <!-- Changes when clicked and mouse over -->
+                            <Style.Triggers>
+                                <!-- Changes when clicked and mouse over -->
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Margin" Value="7"/>
                                     <Setter Property="BorderThickness" Value="5"/>
@@ -106,8 +121,8 @@
                                  FontSize="24" FontFamily="Comic Sans MS"
                                  Style="{StaticResource MenuButtonTheme}"
                                  Command="{Binding NavigateFactoryCommand}"/>
-                    
-                    
+
+
                 </StackPanel>
 
 

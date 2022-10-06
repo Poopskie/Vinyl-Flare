@@ -11,7 +11,7 @@ using Vinyl_Flare.MVVM.ViewModel;
 namespace Vinyl_Flare.MVVM.Commands
 {
     public class PlaySongCommand : CommandBase // using a parameter navigation service
-        // using this to move selected album to home to play
+                                               // using this to move selected album to home to play
     {
         private readonly LibraryViewModel _viewModel; // current viewmodel information
         private readonly ParameterNavigationService<Album, PlaySongViewModel> _navigationService;
@@ -29,7 +29,7 @@ namespace Vinyl_Flare.MVVM.Commands
         {
             // taking parameter from Libraryviewmodel (which has album<list> from db)
             Album album = _viewModel.albums[_selected];
-            
+
             // Navigate the selected album to home
 
             // Navigate with ParameterNavigationService + takes in a Tparameter
@@ -37,4 +37,5 @@ namespace Vinyl_Flare.MVVM.Commands
 
         }
     }
+
 }

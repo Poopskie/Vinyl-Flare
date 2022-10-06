@@ -12,6 +12,9 @@ namespace Vinyl_Flare.MVVM.Store
     {
         // action is void event with no parameters
         public event Action CurrentViewModelChanged;
+        // action for playsongviewmodel
+        public event Action PlayingSongsNow;
+
         private ViewModelBase _currentViewModel;
         public ViewModelBase CurrentViewModel
         {
@@ -25,8 +28,14 @@ namespace Vinyl_Flare.MVVM.Store
 
         private void OnCurrentViewModelChanged()
         {
+            if (_currentViewModel.GetType() == typeof(PlaySongViewModel))
+            {
+                PlayingSongsNow?.Invoke();
+            }
+
             // method that notifies all subscribed to currentviewmodelchanged
             CurrentViewModelChanged?.Invoke();
+
         }
     }
 }
