@@ -12,7 +12,8 @@
         x:Name="window"
         ResizeMode="NoResize" WindowState="Maximized"
         Background="Transparent"
-        WindowStyle="ThreeDBorderWindow" Icon="/Images/milimnava.jpg">
+        WindowStyle="ThreeDBorderWindow" Icon="/Images/milimnava.jpg"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors">
     <!--AllowsTransparency="True"-->
 
 
@@ -43,15 +44,58 @@
             <StackPanel Margin="0,0,0,0" HorizontalAlignment="Stretch"
                         >
 
+
                 <Button Margin="10 10 10 -150" Height="100" BorderThickness="0"
-                        Visibility="{Binding Milim}" Background="Transparent"
-                        IsHitTestVisible="False">
+                            Visibility="{Binding Milim}" Background="Transparent"
+                            IsHitTestVisible="True" Name="milimbutton" Focusable="False"
+                            >
 
                     <Image Source="Images/milimnava.jpg" HorizontalAlignment="Center" 
-                           Visibility="{Binding Milim, NotifyOnTargetUpdated=True}"
-                           x:Name="milim"
-                           TargetUpdated="OnTargetUpdated" Height="150"/>
-                </Button>
+                               Visibility="{Binding Milim, NotifyOnTargetUpdated=True}"
+                               x:Name="milim"
+                               TargetUpdated="OnTargetUpdated" Height="150"/>
+
+                    <Button.Triggers>
+
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                                Storyboard.TargetProperty="Opacity"
+                                                Storyboard.TargetName="milimbutton"
+                                                To="1.0" Duration="0:0:2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                                Storyboard.TargetProperty="Opacity"
+                                                Storyboard.TargetName="milimbutton"
+                                                To="0.0" Duration="0:0:1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                    </Button.Triggers>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding LeavePlaySongView}"/>
+                            <i:InvokeCommandAction Command="{Binding NavigateHomeCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                      
+                    
+
+
+                    </Button>
+                    
+                    
+                    
+
 
                 <!-- The button that hides the other menu options -->
                 <ToggleButton HorizontalAlignment="Center" Checked="HideMenus_Checked"

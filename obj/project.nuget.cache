@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8O5bLsH416plWGjGhJ5wAG0XnQw1gPxVSgkQpQT0QEbfHbOg6VmpVYeuW8gNmalKEaAtdmxHtPSYqp/rL3Hvmg==",
+  "dgSpecHash": "agP0FW0uMnfT7DXAv/MBWThmaNoLwLccbLYra+HUeVwPUQKYQw4lV/c+fCFequd2JdQ+b5u7YUJL01anFftcCA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jackie's PC\\source\\repos\\Vinyl Flare\\Vinyl Flare.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "C:\\Users\\Jackie's PC\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Jackie's PC\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Jackie's PC\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Jackie's PC\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\Jackie's PC\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\Jackie's PC\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
     "C:\\Users\\Jackie's PC\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.6\\sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",

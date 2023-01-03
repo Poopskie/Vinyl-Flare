@@ -27,6 +27,8 @@ namespace Vinyl_Flare.MVVM.ViewModel
         public ICommand NavigateLibraryCommand { get; } // property with parameter
         public ICommand NavigateFactoryCommand => SideBar.NavigateFactoryCommand;
 
+        public ICommand LeavePlaySongView { get; }
+
         public readonly List<Album> albums; // NEED TO ADD A ONPROPERTYCHANGED
         public readonly List<Song> songs; // NEED TO ADD A ONPROPERTYCHANGED
 
@@ -64,12 +66,21 @@ namespace Vinyl_Flare.MVVM.ViewModel
             // Once invoked, method added will be triggered
             _navigationStore.PlayingSongsNow += PlayingSongsNow; // Don't need this, can relocate to here
 
+            LeavePlaySongView = new LeavePlaySongCommand(this);
         }
 
         private void PlayingSongsNow()
         {
             Milim = Visibility.Visible;
             OnPropertyChanged(nameof(Milim));
+        }
+
+        public void LeavePlaySongFunction()
+        {
+            Milim = Visibility.Hidden;
+            OnPropertyChanged(nameof(Milim));
+            
+
         }
 
         private void OnCurrentViewModelChanged()

@@ -64,6 +64,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
             }
         }
 
+        private DispatcherTimer timer = new(); // initializing timer for song
 
         public PlaySongViewModel(Album album) // default parameter for start
         {
@@ -78,7 +79,7 @@ namespace Vinyl_Flare.MVVM.ViewModel
             Skip = new MediaControl(mediaPlayer, "skip");
             SongNow = _album.Songs[SongPlaying].SongName; // initializing songname
 
-            DispatcherTimer timer = new(); // initializing timer for song
+            
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
             timer.Start();
@@ -110,6 +111,11 @@ namespace Vinyl_Flare.MVVM.ViewModel
 
         }
 
+        ~PlaySongViewModel() // DESTRUCTOR
+        {
+
+        }
+
 
         private void OnlblStatusPropertyChanged()
         {
@@ -119,6 +125,15 @@ namespace Vinyl_Flare.MVVM.ViewModel
         private void OnSongNowPropertyChanged()
         {
             OnPropertyChanged(nameof(SongNow));
+        }
+
+        public override void Dispose()
+        {
+            mediaPlayer.Close();
+            timer.Stop();
+            timer.Tick -= timer_Tick;
+
+            base.Dispose();
         }
 
 

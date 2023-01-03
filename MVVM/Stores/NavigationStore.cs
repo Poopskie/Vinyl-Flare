@@ -21,6 +21,7 @@ namespace Vinyl_Flare.MVVM.Store
             get => _currentViewModel;
             set 
             { 
+                _currentViewModel?.Dispose(); 
                 _currentViewModel = value;
                 OnCurrentViewModelChanged();
             }

@@ -149,3 +149,4 @@ C:\Users\jacki\source\repos\Poopskie\Vinyl-Flare\obj\Debug\net6.0-windows\Themes
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\PlaySongView.g.cs
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\MVVM\View\PlaySongView.baml
 C:\Users\Jackie's PC\source\repos\Vinyl Flare\obj\Debug\net6.0-windows\Themes\VolumeSliderTheme.baml
+C:\Users\Jackie's PC\source\repos\Vinyl Flare\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll

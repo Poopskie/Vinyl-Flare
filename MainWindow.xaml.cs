@@ -64,6 +64,14 @@ namespace Vinyl_Flare
                 window.WindowStyle = WindowStyle.None;
 
             }
+            else
+            {
+                HideMenus.Visibility = Visibility.Visible;
+                SideMenu.Visibility = Visibility.Visible;
+                btnFullScreen.Visibility = Visibility.Visible;
+                window.WindowStyle = WindowStyle.None;
+
+            }
 
         }
     }
